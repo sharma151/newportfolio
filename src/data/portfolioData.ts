@@ -44,23 +44,24 @@ export interface SocialLink {
 
 export const siteConfig = {
   name: "Saurav Sharma",
-  title: "Senior Frontend Engineer",
-  tagline: "Crafting immersive digital experiences at the intersection of design, motion, and engineering.",
+  title: "Frontend Developer",
+  tagline:
+    "Crafting immersive digital experiences at the intersection of design, motion, and engineering.",
   email: "hello@sauravsharma.dev",
   location: "India",
   resumeUrl: "/resume/saurav-sharma-resume.pdf",
-  githubUsername: "sauravsharma",
+  githubUsername: "sharma151",
 };
 
 export const socialLinks: SocialLink[] = [
   {
     name: "GitHub",
-    href: "https://github.com/sauravsharma",
+    href: "https://github.com/sharma151",
     label: "Visit GitHub profile",
   },
   {
     name: "LinkedIn",
-    href: "https://linkedin.com/in/sauravsharma",
+    href: "https://www.linkedin.com/in/saurav0402/",
     label: "Connect on LinkedIn",
   },
   {
@@ -77,40 +78,37 @@ export const socialLinks: SocialLink[] = [
 
 export const educationExperience: EducationExperienceItem[] = [
   {
-    year: "2024 — Present",
-    title: "Senior Frontend Engineer",
-    degree: "Design Systems & Motion",
-    institution: "Vercel",
-    link: "https://vercel.com",
+    year: "2024 - Present",
+    title: "Young Innovation Pvt Ltd (NP)",
+    degree: "Frontend Developer",
+    link: "https://younginnovations.com.np/",
     description:
-      "Leading frontend architecture for developer tooling products. Building performant animation systems, design tokens, and accessible component libraries used by millions of developers.",
+      " React Frontend Developer | Building clean, responsive UIs using modern technologies like TypeScript, TanStack Query, and Tailwind CSS. Focused on scalable components, intuitive user experiences, and continuous improvement. Open to new challenges and growth opportunities.",
   },
   {
-    year: "2021 — 2024",
-    title: "Frontend Engineer",
-    degree: "Product Engineering",
-    institution: "Stripe",
-    link: "https://stripe.com",
+    year: "2020 - 2024",
+    title: "Oriental College of Technology",
+    degree: "B.Tech - Computer science Engineering",
+    link: "https://oriental.ac.in/",
     description:
-      "Shipped high-impact checkout experiences and dashboard interfaces. Pioneered micro-interaction patterns that increased conversion rates by 12% across key funnels.",
+      "Completed B.Tech in Computer Science and Engineering with a specialization in Cyber Security. Gained a strong foundation in core engineering disciplines including Civil, Electrical, and Mechanical, along with in-depth knowledge in Software Engineering, Cryptography, Ethical Hacking, Mobile Forensics, IT and Web Technologies, Hardware Security, OOPs, Data Structures and Algorithms, DBMS, Python, Operating Systems, Network Security, Digital Forensics, and more.",
+    institution: "Bhopal (MP), India",
   },
   {
-    year: "2019 — 2021",
-    title: "UI Developer",
-    degree: "Creative Technology",
-    institution: "AKQA",
-    link: "https://akqa.com",
+    year: "2018 - 2020",
+    title: "Dav Sushil Kedia Vishwa Bharti",
+    degree: "Senior Secondary Schooling",
+    link: "https://davnepal.com/",
     description:
-      "Crafted award-winning campaign microsites for global brands. Specialized in WebGL integrations, scroll-driven narratives, and cinematic page transitions.",
+      "Completed senior secondary education (Class 11–12) under CBSE with a focus on the Science stream, specializing in Physics, Chemistry, Mathematics, Computer Science, English, and Physical Education. ",
+    institution: "Kathmandu, Nepal",
   },
   {
-    year: "2015 — 2019",
-    title: "B.S. Computer Science",
-    degree: "Human-Computer Interaction",
-    institution: "Carnegie Mellon University",
-    link: "https://cmu.edu",
-    description:
-      "Focused on interactive media, computational design, and software engineering. Thesis on perceptual performance of CSS vs. canvas-based animations.",
+    year: "2015 - 2018",
+    title: " Gyan Bharti Public School",
+    degree: "Higher Secondary School",
+    link: "http://gbpsdbg.org/",
+    description: " Darbhanga (BR), India ",
   },
 ];
 
@@ -118,7 +116,8 @@ export const projects: ProjectItem[] = [
   {
     id: "infosnap",
     title: "InfoSnap",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80",
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80",
     github: "https://github.com/sauravsharma/infosnap",
     live: "https://infosnap.dev",
     info: "Real-time analytics dashboard with fluid data visualizations and sub-16ms render performance.",
@@ -132,7 +131,8 @@ export const projects: ProjectItem[] = [
   {
     id: "devflow",
     title: "DevFlow",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
     github: "https://github.com/sauravsharma/devflow",
     live: "https://devflow.io",
     info: "Developer workflow automation platform with AI-assisted code review and deployment pipelines.",
@@ -146,7 +146,8 @@ export const projects: ProjectItem[] = [
   {
     id: "nexus-ui",
     title: "Nexus UI",
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80",
+    image:
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80",
     github: "https://github.com/sauravsharma/nexus-ui",
     live: "https://nexus-ui.dev",
     info: "Open-source design system with 80+ accessible components and advanced motion primitives.",
@@ -160,7 +161,8 @@ export const projects: ProjectItem[] = [
   {
     id: "pulse-analytics",
     title: "Pulse Analytics",
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80",
+    image:
+      "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80",
     github: "https://github.com/sauravsharma/pulse-analytics",
     live: null,
     info: "Privacy-first web analytics with beautiful, customizable reporting dashboards.",
@@ -174,7 +176,8 @@ export const projects: ProjectItem[] = [
   {
     id: "cipher-vault",
     title: "Cipher Vault",
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&q=80",
+    image:
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&q=80",
     github: "https://github.com/sauravsharma/cipher-vault",
     live: "https://ciphervault.app",
     info: "End-to-end encrypted password manager with biometric authentication and seamless sync.",
@@ -188,7 +191,8 @@ export const projects: ProjectItem[] = [
   {
     id: "atlas-maps",
     title: "Atlas Maps",
-    image: "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1200&q=80",
+    image:
+      "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1200&q=80",
     github: "https://github.com/sauravsharma/atlas-maps",
     live: "https://atlasmaps.co",
     info: "Interactive 3D globe visualization platform for geospatial data storytelling.",

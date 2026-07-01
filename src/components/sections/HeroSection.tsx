@@ -44,7 +44,7 @@ export function HeroSection() {
       className="relative flex min-h-screen flex-col items-center justify-center px-6 pt-24"
       aria-labelledby="hero-heading"
     >
-      <div className="absolute inset-0 grid-accent opacity-30" aria-hidden="true" />
+      <div className="absolute inset-0 grid-accent opacity-40" aria-hidden="true" />
 
       <div className="relative z-10 mx-auto max-w-5xl text-center">
         <p className="mb-6 text-sm font-medium uppercase tracking-[0.2em] text-accent">

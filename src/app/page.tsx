@@ -1,3 +1,4 @@
+import { AboutIntro } from "@/components/sections/AboutIntro";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { FeaturedProjects } from "@/components/sections/FeaturedProjects";
 import { HeroSection } from "@/components/sections/HeroSection";
@@ -7,6 +8,7 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <AboutIntro />
       <FeaturedProjects />
       <MediumArticles />
       <ContactForm />
