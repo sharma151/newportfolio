@@ -68,7 +68,10 @@ export function MediumArticles() {
               className="group relative overflow-hidden rounded-2xl border border-border bg-card p-8 transition-all duration-500 hover:border-accent/30 hover:shadow-xl hover:shadow-accent/5"
               aria-label={`Read article: ${article.title}`}
             >
-              <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-accent/5 transition-transform duration-500 group-hover:scale-150" aria-hidden="true" />
+              <div
+                className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-accent/5 transition-transform duration-500 group-hover:scale-150"
+                aria-hidden="true"
+              />
 
               <div className="relative z-10">
                 <div className="flex items-center gap-3">
@@ -88,7 +91,9 @@ export function MediumArticles() {
                 </p>
 
                 <div className="mt-6 flex items-center justify-between">
-                  <span className="text-xs text-muted-foreground">{article.date}</span>
+                  <span className="text-xs text-muted-foreground">
+                    {article.date}
+                  </span>
                   <ArrowUpRight
                     className="h-4 w-4 text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent"
                     aria-hidden="true"

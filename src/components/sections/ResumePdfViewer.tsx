@@ -11,10 +11,10 @@ interface ResumePdfViewerProps {
   onLoadError: () => void;
 }
 
-type PdfModule = {
+interface PdfModule {
   Document: React.ComponentType<DocumentProps>;
   Page: React.ComponentType<PageProps>;
-};
+}
 
 export function ResumePdfViewer({
   file,

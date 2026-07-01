@@ -5,7 +5,10 @@ import gsap from "gsap";
 import { useRef } from "react";
 import { getTechBrandStyle, TechIcon } from "@/components/ui/TechIcons";
 import { type TechBadgeItem, techBadges } from "@/data/techBadges";
-import { gsap as gsapShared, registerScrollTrigger } from "@/hooks/useScrollTrigger";
+import {
+  gsap as gsapShared,
+  registerScrollTrigger,
+} from "@/hooks/useScrollTrigger";
 
 interface MagneticBadgeProps {
   badge: TechBadgeItem;

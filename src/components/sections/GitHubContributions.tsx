@@ -36,8 +36,18 @@ const levelColors = [
 ];
 
 const monthLabels = [
-  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
 ];
 
 export function GitHubContributions() {
@@ -47,14 +57,18 @@ export function GitHubContributions() {
 
   const totalContributions = useMemo(
     () =>
-      contributions.flat().reduce((sum, level) => sum + (level > 0 ? level * 2 : 0), 0),
+      contributions
+        .flat()
+        .reduce((sum, level) => sum + (level > 0 ? level * 2 : 0), 0),
     [contributions]
   );
 
   useGSAP(
     () => {
       registerScrollTrigger();
-      const cells = gridRef.current?.querySelectorAll("[data-contribution-cell]");
+      const cells = gridRef.current?.querySelectorAll(
+        "[data-contribution-cell]"
+      );
 
       if (!cells) return;
 
@@ -96,7 +110,9 @@ export function GitHubContributions() {
             GitHub Activity
           </h2>
           <p className="mt-2 text-sm text-muted-foreground">
-            <span className="font-semibold text-foreground">{totalContributions}</span>{" "}
+            <span className="font-semibold text-foreground">
+              {totalContributions}
+            </span>{" "}
             contributions in the last year on{" "}
             <a
               href={`https://github.com/${siteConfig.githubUsername}`}
@@ -111,7 +127,10 @@ export function GitHubContributions() {
         </div>
 
         <div className="overflow-x-auto rounded-2xl border border-border bg-card p-6">
-          <div className="mb-3 flex gap-1 text-xs text-muted-foreground" aria-hidden="true">
+          <div
+            className="mb-3 flex gap-1 text-xs text-muted-foreground"
+            aria-hidden="true"
+          >
             {monthLabels.map((month) => (
               <span key={month} className="flex-1 text-center">
                 {month}

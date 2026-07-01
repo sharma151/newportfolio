@@ -103,7 +103,9 @@ export function FeaturedProjects() {
               <div className="absolute inset-x-0 bottom-0 p-6">
                 <div className="flex items-center gap-2">
                   <Badge variant="accent">{project.category}</Badge>
-                  <span className="text-xs text-muted-foreground">{project.year}</span>
+                  <span className="text-xs text-muted-foreground">
+                    {project.year}
+                  </span>
                 </div>
                 <h3 className="mt-3 text-xl font-semibold text-foreground transition-colors group-hover:text-accent">
                   {project.title}

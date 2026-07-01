@@ -30,7 +30,9 @@ export function useScrollTriggerRefresh(): void {
   }, [pathname]);
 }
 
-export function useScrollTriggerCleanup(scope: React.RefObject<HTMLElement | null>): void {
+export function useScrollTriggerCleanup(
+  scope: React.RefObject<HTMLElement | null>
+): void {
   useGSAP(
     () => {
       registerScrollTrigger();

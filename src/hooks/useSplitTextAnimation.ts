@@ -27,7 +27,8 @@ export function useSplitTextAnimation(
       const container = containerRef.current;
       if (!container) return;
 
-      const charElements = container.querySelectorAll<HTMLElement>("[data-char]");
+      const charElements =
+        container.querySelectorAll<HTMLElement>("[data-char]");
 
       gsap.fromTo(
         charElements,

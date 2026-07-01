@@ -7,7 +7,11 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import { Badge } from "@/components/ui/Badge";
-import { type ProjectItem, projectCategories, projects } from "@/data/portfolioData";
+import {
+  type ProjectItem,
+  projectCategories,
+  projects,
+} from "@/data/portfolioData";
 import { gsap, registerScrollTrigger } from "@/hooks/useScrollTrigger";
 import { cn } from "@/lib/utils";
 
@@ -158,7 +162,9 @@ export function ProjectsGrid() {
               <div className="p-6">
                 <div className="flex items-center gap-2">
                   <Badge variant="accent">{project.category}</Badge>
-                  <span className="text-xs text-muted-foreground">{project.year}</span>
+                  <span className="text-xs text-muted-foreground">
+                    {project.year}
+                  </span>
                 </div>
                 <h2 className="mt-3 text-lg font-semibold text-foreground transition-colors group-hover:text-accent">
                   {project.title}

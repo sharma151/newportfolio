@@ -27,7 +27,8 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
             "min-h-[140px] w-full resize-none rounded-xl border border-border bg-card px-4 py-3 text-sm text-foreground",
             "placeholder:text-muted-foreground",
             "transition-colors duration-300 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20",
-            error && "border-red-500 focus:border-red-500 focus:ring-red-500/20",
+            error &&
+              "border-red-500 focus:border-red-500 focus:ring-red-500/20",
             className
           )}
           aria-invalid={error ? true : undefined}
@@ -35,7 +36,11 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           {...props}
         />
         {error && (
-          <p id={`${textareaId}-error`} className="text-xs text-red-500" role="alert">
+          <p
+            id={`${textareaId}-error`}
+            className="text-xs text-red-500"
+            role="alert"
+          >
             {error}
           </p>
         )}

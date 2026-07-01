@@ -18,7 +18,7 @@ export function AboutIntro() {
       gsap.fromTo(
         imageRef.current,
         { opacity: 0, x: -60 },
-        { opacity: 1, x: 0, duration: 1, ease: "power3.out" },
+        { opacity: 1, x: 0, duration: 1, ease: "power3.out" }
       );
 
       gsap.fromTo(
@@ -31,16 +31,16 @@ export function AboutIntro() {
           stagger: 0.15,
           delay: 0.3,
           ease: "power3.out",
-        },
+        }
       );
     },
-    { scope: sectionRef },
+    { scope: sectionRef }
   );
 
   return (
     <section
       ref={sectionRef}
-      className="px-6 pt-32 pb-16 lg:px-8"
+      className="px-6 pb-16 pt-32 lg:px-8"
       aria-labelledby="about-intro-heading"
     >
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-20">
