@@ -45,7 +45,7 @@ export function HeroSection() {
       aria-labelledby="hero-heading"
     >
       <div
-        className="grid-accent absolute inset-0 opacity-40"
+        className="grid-accent absolute inset-0 opacity-100 dark:opacity-55"
         aria-hidden="true"
       />
 
@@ -56,7 +56,7 @@ export function HeroSection() {
 
         <h1
           id="hero-heading"
-          className="text-5xl font-bold tracking-tight sm:text-7xl lg:text-8xl"
+          className="text-4xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl"
         >
           <span
             ref={titleRef}
