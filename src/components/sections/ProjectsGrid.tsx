@@ -93,7 +93,7 @@ export function ProjectsGrid() {
   return (
     <section
       ref={sectionRef}
-      className="px-6 py-24 lg:px-8"
+      className="px-6 pt-32 pb-24 lg:pt-36 lg:pb-32 lg:px-8"
       aria-labelledby="projects-heading"
     >
       <div className="mx-auto max-w-7xl">
