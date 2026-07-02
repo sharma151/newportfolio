@@ -1,10 +1,9 @@
 "use client";
 
 import { useGSAP } from "@gsap/react";
-import { ArrowUpRight, Clock } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Badge } from "@/components/ui/Badge";
-import { mediumArticles } from "@/data/portfolioData";
 import { gsap, registerScrollTrigger } from "@/hooks/useScrollTrigger";
 import axios from "axios";
 
@@ -12,8 +11,6 @@ export function MediumArticles() {
   const sectionRef = useRef<HTMLElement>(null);
   const [articles, setArticles] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
-
-  console.log("MediumArticles component rendered", articles);
 
   useEffect(() => {
     const fetchArticles = async () => {
@@ -34,10 +31,11 @@ export function MediumArticles() {
 
   useGSAP(
     () => {
+      if (loading) return;
       registerScrollTrigger();
       const cards = sectionRef.current?.querySelectorAll("[data-article-card]");
 
-      if (!cards) return;
+      if (!cards || cards.length === 0) return;
 
       gsap.fromTo(
         cards,
@@ -56,7 +54,7 @@ export function MediumArticles() {
         }
       );
     },
-    { scope: sectionRef }
+    { scope: sectionRef, dependencies: [loading] }
   );
 
   return (
@@ -79,51 +77,83 @@ export function MediumArticles() {
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2">
-          {articles.map((article: any) => (
-            <a
-              key={article.guid ?? article.link}
-              href={article.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-cursor="interactive"
-              data-article-card
-              className="group relative overflow-hidden rounded-2xl border border-border bg-card p-8 transition-all duration-500 hover:border-accent/30 hover:shadow-xl hover:shadow-accent/5"
-              aria-label={`Read article: ${article.title}`}
-            >
-              <div
-                className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-accent/5 transition-transform duration-500 group-hover:scale-150"
-                aria-hidden="true"
-              />
-
-              <div className="relative z-10">
-                <div className="flex items-center gap-3">
-                  {article.categories.slice(0, 3).map((category: string) => (
-                    <Badge variant="outline" key={category}>
-                      {category}
-                    </Badge>
-                  ))}
+          {loading
+            ? // Skeleton Loading State
+              Array.from({ length: 4 }).map((_, index) => (
+                <div
+                  key={`skeleton-${index}`}
+                  className="animate-pulse rounded-2xl border border-border bg-card p-8"
+                >
+                  {/* Badges Skeleton */}
+                  <div className="flex gap-2">
+                    <div className="h-5 w-16 rounded bg-muted" />
+                    <div className="h-5 w-20 rounded bg-muted" />
+                  </div>
+                  {/* Title Skeleton */}
+                  <div className="mt-5 space-y-2">
+                    <div className="h-5 w-5/6 rounded bg-muted" />
+                    <div className="h-5 w-2/3 rounded bg-muted" />
+                  </div>
+                  {/* Description Skeleton */}
+                  <div className="mt-4 space-y-2">
+                    <div className="h-4 w-full rounded bg-muted/60" />
+                    <div className="h-4 w-4/5 rounded bg-muted/60" />
+                  </div>
+                  {/* Footer Skeleton */}
+                  <div className="mt-8 flex items-center justify-between">
+                    <div className="h-3 w-20 rounded bg-muted" />
+                    <div className="h-4 w-4 rounded bg-muted" />
+                  </div>
                 </div>
-
-                <h3 className="mt-4 text-lg font-semibold leading-snug text-foreground transition-colors group-hover:text-accent">
-                  {article.title}
-                </h3>
-
-                <p className="mt-3 line-clamp-2 text-sm leading-relaxed text-muted-foreground">
-                  {article.description.replace(/<[^>]+>/g, "")}
-                </p>
-
-                <div className="mt-6 flex items-center justify-between">
-                  <span className="text-xs text-muted-foreground">
-                    {new Date(article.pubDate).toLocaleDateString()}
-                  </span>
-                  <ArrowUpRight
-                    className="h-4 w-4 text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent"
+              ))
+            : // Actual Articles Grid
+              articles.map((article: any) => (
+                <a
+                  key={article.guid ?? article.link}
+                  href={article.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-cursor="interactive"
+                  data-article-card
+                  className="group relative overflow-hidden rounded-2xl border border-border bg-card p-8 transition-all duration-500 hover:border-accent/30 hover:shadow-xl hover:shadow-accent/5"
+                  aria-label={`Read article: ${article.title}`}
+                >
+                  <div
+                    className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-accent/5 transition-transform duration-500 group-hover:scale-150"
                     aria-hidden="true"
                   />
-                </div>
-              </div>
-            </a>
-          ))}
+
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-3">
+                      {article.categories
+                        ?.slice(0, 3)
+                        .map((category: string) => (
+                          <Badge variant="outline" key={category}>
+                            {category}
+                          </Badge>
+                        ))}
+                    </div>
+
+                    <h3 className="mt-4 text-lg font-semibold leading-snug text-foreground transition-colors group-hover:text-accent">
+                      {article.title}
+                    </h3>
+
+                    <p className="mt-3 line-clamp-2 text-sm leading-relaxed text-muted-foreground">
+                      {article.description.replace(/<[^>]+>/g, "")}
+                    </p>
+
+                    <div className="mt-6 flex items-center justify-between">
+                      <span className="text-xs text-muted-foreground">
+                        {new Date(article.pubDate).toLocaleDateString()}
+                      </span>
+                      <ArrowUpRight
+                        className="h-4 w-4 text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent"
+                        aria-hidden="true"
+                      />
+                    </div>
+                  </div>
+                </a>
+              ))}
         </div>
       </div>
     </section>
