@@ -9,23 +9,28 @@ import { Textarea } from "@/components/ui/Textarea";
 import { siteConfig, socialLinks } from "@/data/portfolioData";
 import { gsap, registerScrollTrigger } from "@/hooks/useScrollTrigger";
 import { cn } from "@/lib/utils";
+import emailjs from "emailjs-com";
 
 interface FormData {
-  name: string;
+  firstname: string;
+  lastname: string;
   email: string;
   subject: string;
   message: string;
+  [key: string]: string;
 }
 
 interface FormErrors {
-  name?: string;
+  firstname?: string;
+  lastname?: string;
   email?: string;
   subject?: string;
   message?: string;
 }
 
 const initialFormData: FormData = {
-  name: "",
+  firstname: "",
+  lastname: "",
   email: "",
   subject: "",
   message: "",
@@ -34,7 +39,8 @@ const initialFormData: FormData = {
 function validateForm(data: FormData): FormErrors {
   const errors: FormErrors = {};
 
-  if (!data.name.trim()) errors.name = "Name is required";
+  if (!data.firstname.trim()) errors.firstname = "First name is required";
+  if (!data.lastname.trim()) errors.lastname = "Last name is required";
   if (!data.email.trim()) {
     errors.email = "Email is required";
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
@@ -56,6 +62,7 @@ export function ContactForm() {
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submittedName, setSubmittedName] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   useGSAP(
@@ -101,10 +108,17 @@ export function ContactForm() {
     }
 
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    setFormData(initialFormData);
+    try {
+      emailjs.init("yVDovN6BqCJqpJYj3");
+      await emailjs.send("service_t0s7m5f", "template_zrhrioo", formData);
+      setSubmittedName(formData.firstname);
+      setFormData(initialFormData);
+    } catch (err) {
+      console.error("FAILED...", err);
+    } finally {
+      setIsSubmitted(true);
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -241,8 +255,8 @@ export function ContactForm() {
                   Message sent successfully!
                 </p>
                 <p className="mt-3 max-w-sm text-muted-foreground">
-                  Thanks for reaching out, {siteConfig.name.split(" ")[0]}.
-                  I&apos;ll get back to you soon.
+                  Thanks for reaching out,{submittedName || "there"}. I&apos;ll
+                  get back to you soon.
                 </p>
                 <Button
                   variant="outline"
@@ -264,15 +278,27 @@ export function ContactForm() {
               >
                 <div className="grid gap-6 sm:grid-cols-2">
                   <Input
-                    label="Name"
-                    name="name"
-                    value={formData.name}
+                    label="First Name"
+                    name="firstname"
+                    value={formData.firstname}
                     onChange={handleChange}
-                    error={errors.name}
+                    error={errors.firstname}
                     placeholder="John Doe"
                     required
                     autoComplete="name"
                   />
+                  <Input
+                    label="Last Name"
+                    name="lastname"
+                    value={formData.lastname}
+                    onChange={handleChange}
+                    error={errors.lastname}
+                    placeholder="Doe"
+                    required
+                    autoComplete="family-name"
+                  />
+                </div>
+                <div className="mt-6">
                   <Input
                     label="Email"
                     name="email"

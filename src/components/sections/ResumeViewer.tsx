@@ -110,78 +110,9 @@ export function ResumeViewer() {
           </h1>
           <p className="mt-2 text-muted-foreground">{siteConfig.title}</p>
         </div>
-
-        {/* <div
-          ref={toolbarRef}
-          className="sticky top-32 z-40 mb-6 flex flex-wrap items-center justify-center gap-4 rounded-2xl border border-border bg-card/90 p-4 backdrop-blur-xl sm:justify-between md:top-24"
-          role="toolbar"
-          aria-label="Resume controls"
-        >
-          <div className="flex items-center gap-2">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setPageNumber((p) => Math.max(p - 1, 1))}
-              disabled={pageNumber <= 1 || hasError}
-              aria-label="Previous page"
-            >
-              <ChevronLeft className="h-4 w-4" />
-            </Button>
-            <span className="min-w-[80px] text-center text-sm text-muted-foreground">
-              {isLoading || hasError ? "—" : `${pageNumber} / ${numPages}`}
-            </span>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setPageNumber((p) => Math.min(p + 1, numPages))}
-              disabled={pageNumber >= numPages || hasError}
-              aria-label="Next page"
-            >
-              <ChevronRight className="h-4 w-4" />
-            </Button>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setScale((s) => Math.max(s - ZOOM_STEP, MIN_ZOOM))}
-              disabled={scale <= MIN_ZOOM || hasError}
-              aria-label="Zoom out"
-            >
-              <Minus className="h-4 w-4" />
-            </Button>
-            <span className="min-w-[50px] text-center text-sm text-muted-foreground">
-              {Math.round(scale * 100)}%
-            </span>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setScale((s) => Math.min(s + ZOOM_STEP, MAX_ZOOM))}
-              disabled={scale >= MAX_ZOOM || hasError}
-              aria-label="Zoom in"
-            >
-              <Plus className="h-4 w-4" />
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setScale(1)}
-              disabled={hasError}
-              aria-label="Reset zoom"
-            >
-              <RotateCcw className="h-4 w-4" />
-            </Button>
-          </div>
-
-          <Button size="sm" onClick={handleDownload} data-cursor="interactive">
-            <Download className="h-4 w-4" aria-hidden="true" />
-            Download PDF
-          </Button>
-        </div> */}
         <div
           ref={toolbarRef}
-          className="sticky top-24 z-40 mb-6 flex flex-nowrap items-center justify-between gap-1 rounded-2xl border border-border bg-card/90 px-2 py-3 backdrop-blur-xl sm:gap-4 sm:p-4 md:top-24"
+          className="sticky top-[6.5rem] z-40 mb-6 flex flex-nowrap items-center justify-between gap-1 rounded-2xl border border-border bg-card/90 px-2 py-3 backdrop-blur-xl sm:gap-4 sm:p-4 md:top-20"
           role="toolbar"
           aria-label="Resume controls"
         >

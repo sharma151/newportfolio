@@ -47,7 +47,7 @@ export const siteConfig = {
   title: "Frontend Developer",
   tagline:
     "Crafting immersive digital experiences at the intersection of design, motion, and engineering.",
-  email: "hello@sauravsharma.dev",
+  email: "sharmasaurav150503@gmail.com",
   location: "India",
   resumeUrl: "/resume/saurav-sharma-resume.pdf",
   githubUsername: "sharma151",
