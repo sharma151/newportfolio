@@ -56,6 +56,37 @@ export function Navbar() {
     });
   };
 
+  const resetIndicator = () => {
+    const indicator = indicatorRef.current;
+    const nav = navRef.current;
+    if (!indicator || !nav) return;
+
+    // Find the active link within the desktop nav
+    const activeLink = nav.querySelector(`div.relative > a[aria-current="page"]`) as HTMLElement;
+
+    if (activeLink) {
+      gsap.to(indicator, {
+        x: activeLink.offsetLeft,
+        width: activeLink.offsetWidth,
+        duration: 0.4,
+        ease: "power3.out",
+      });
+    } else {
+      gsap.to(indicator, {
+        width: 0,
+        duration: 0.4,
+        ease: "power3.out",
+      });
+    }
+  };
+
+  // Run on mount and when pathname changes
+  useEffect(() => {
+    // Slight delay to ensure layout is calculated
+    const timeout = setTimeout(resetIndicator, 100);
+    return () => clearTimeout(timeout);
+  }, [pathname]);
+
   const toggleTheme = () => {
     setTheme(resolvedTheme === "dark" ? "light" : "dark");
   };
@@ -79,7 +110,7 @@ export function Navbar() {
           SS<span className="text-accent">.</span>
         </Link>
 
-        <div className="relative hidden items-center gap-1 md:flex">
+        <div className="relative hidden items-center gap-1 md:flex" onMouseLeave={resetIndicator}>
           {navLinks.map((link) => (
             <Link
               key={link.href}

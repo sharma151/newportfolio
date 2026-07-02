@@ -44,7 +44,10 @@ export function HeroSection() {
       className="relative flex min-h-screen flex-col items-center justify-center px-6 pt-24"
       aria-labelledby="hero-heading"
     >
-      <div className="absolute inset-0 grid-accent opacity-30" aria-hidden="true" />
+      <div
+        className="grid-accent absolute inset-0 opacity-100 dark:opacity-55"
+        aria-hidden="true"
+      />
 
       <div className="relative z-10 mx-auto max-w-5xl text-center">
         <p className="mb-6 text-sm font-medium uppercase tracking-[0.2em] text-accent">
@@ -53,9 +56,12 @@ export function HeroSection() {
 
         <h1
           id="hero-heading"
-          className="text-5xl font-bold tracking-tight sm:text-7xl lg:text-8xl"
+          className="text-4xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl"
         >
-          <span ref={titleRef} className="inline-flex flex-wrap justify-center gap-x-[0.05em]">
+          <span
+            ref={titleRef}
+            className="inline-flex flex-wrap justify-center gap-x-[0.05em]"
+          >
             {chars.map((char, i) => (
               <span
                 key={`${char}-${i}`}
@@ -76,7 +82,10 @@ export function HeroSection() {
           {siteConfig.tagline}
         </p>
 
-        <div ref={ctaRef} className="mt-10 flex flex-wrap items-center justify-center gap-4">
+        <div
+          ref={ctaRef}
+          className="mt-10 flex flex-wrap items-center justify-center gap-4"
+        >
           <Link href="/projects" data-cursor="interactive">
             <Button size="lg">View Projects</Button>
           </Link>
@@ -88,7 +97,10 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2" aria-hidden="true">
+      <div
+        className="absolute bottom-12 left-1/2 -translate-x-1/2"
+        aria-hidden="true"
+      >
         <ArrowDown className="h-5 w-5 animate-bounce text-muted-foreground" />
       </div>
     </section>

@@ -4,7 +4,7 @@ import { ProjectDetail } from "@/components/sections/ProjectDetail";
 import { getProjectById, projects } from "@/data/portfolioData";
 
 interface ProjectPageProps {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
 export function generateStaticParams() {
@@ -13,10 +13,9 @@ export function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({
-  params,
-}: ProjectPageProps): Metadata {
-  const project = getProjectById(params.id);
+export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
+  const { id } = await params;
+  const project = getProjectById(id);
 
   if (!project) {
     return { title: "Project Not Found" };
@@ -33,8 +32,9 @@ export function generateMetadata({
   };
 }
 
-export default function ProjectPage({ params }: ProjectPageProps) {
-  const project = getProjectById(params.id);
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  const { id } = await params;
+  const project = getProjectById(id);
 
   if (!project) {
     notFound();

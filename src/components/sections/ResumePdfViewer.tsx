@@ -11,10 +11,10 @@ interface ResumePdfViewerProps {
   onLoadError: () => void;
 }
 
-type PdfModule = {
+interface PdfModule {
   Document: React.ComponentType<DocumentProps>;
   Page: React.ComponentType<PageProps>;
-};
+}
 
 export function ResumePdfViewer({
   file,
@@ -34,7 +34,7 @@ export function ResumePdfViewer({
         const mod = await import("react-pdf");
         const { pdfjs } = mod;
 
-        pdfjs.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs";
+        pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
         if (!cancelled) {
           setPdfModule({ Document: mod.Document, Page: mod.Page });

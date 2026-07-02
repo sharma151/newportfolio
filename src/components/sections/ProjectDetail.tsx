@@ -48,7 +48,10 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
 
   return (
     <article ref={sectionRef}>
-      <div ref={heroRef} className="relative h-[50vh] min-h-[400px] w-full overflow-hidden">
+      <div
+        ref={heroRef}
+        className="relative h-[50vh] min-h-[400px] w-full overflow-hidden"
+      >
         <Image
           src={project.image}
           alt={project.title}
@@ -112,7 +115,11 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
           )}
         </div>
 
-        <div className="mt-12 flex flex-wrap gap-2" role="list" aria-label="Technologies used">
+        <div
+          className="mt-12 flex flex-wrap gap-2"
+          role="list"
+          aria-label="Technologies used"
+        >
           {project.tags.map((tag) => (
             <Badge key={tag} variant="outline">
               {tag}

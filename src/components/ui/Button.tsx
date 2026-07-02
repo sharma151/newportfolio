@@ -7,14 +7,10 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const variantStyles: Record<NonNullable<ButtonProps["variant"]>, string> = {
-  primary:
-    "bg-foreground text-background hover:bg-foreground/90 shadow-sm",
-  secondary:
-    "bg-muted text-foreground hover:bg-muted/80",
-  ghost:
-    "bg-transparent text-foreground hover:bg-muted",
-  outline:
-    "border border-border bg-transparent text-foreground hover:bg-muted",
+  primary: "bg-foreground text-background hover:bg-foreground/90 shadow-sm",
+  secondary: "bg-muted text-foreground hover:bg-muted/80",
+  ghost: "bg-transparent text-foreground hover:bg-muted",
+  outline: "border border-border bg-transparent text-foreground hover:bg-muted",
 };
 
 const sizeStyles: Record<NonNullable<ButtonProps["size"]>, string> = {

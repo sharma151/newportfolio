@@ -150,7 +150,10 @@ export function ContactForm() {
                 <ul className="space-y-4" role="list">
                   <li className="flex items-start gap-3">
                     <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-muted">
-                      <Mail className="h-4 w-4 text-accent" aria-hidden="true" />
+                      <Mail
+                        className="h-4 w-4 text-accent"
+                        aria-hidden="true"
+                      />
                     </span>
                     <div>
                       <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
@@ -167,7 +170,10 @@ export function ContactForm() {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-muted">
-                      <MapPin className="h-4 w-4 text-accent" aria-hidden="true" />
+                      <MapPin
+                        className="h-4 w-4 text-accent"
+                        aria-hidden="true"
+                      />
                     </span>
                     <div>
                       <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
@@ -180,7 +186,10 @@ export function ContactForm() {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-muted">
-                      <Clock className="h-4 w-4 text-accent" aria-hidden="true" />
+                      <Clock
+                        className="h-4 w-4 text-accent"
+                        aria-hidden="true"
+                      />
                     </span>
                     <div>
                       <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">

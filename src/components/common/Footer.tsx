@@ -107,7 +107,11 @@ export function Footer() {
                     <a
                       href={link.href}
                       target={link.name !== "Email" ? "_blank" : undefined}
-                      rel={link.name !== "Email" ? "noopener noreferrer" : undefined}
+                      rel={
+                        link.name !== "Email"
+                          ? "noopener noreferrer"
+                          : undefined
+                      }
                       data-cursor="interactive"
                       aria-label={link.label}
                       className={cn(
@@ -130,7 +134,8 @@ export function Footer() {
           className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row"
         >
           <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+            &copy; {new Date().getFullYear()} {siteConfig.name}. All rights
+            reserved.
           </p>
           <p className="text-xs text-muted-foreground">
             Crafted with precision in {siteConfig.location}

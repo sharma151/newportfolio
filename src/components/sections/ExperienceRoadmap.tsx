@@ -101,7 +101,9 @@ export function ExperienceRoadmap() {
                 aria-hidden="true"
               />
 
-              <time className="text-sm font-medium text-accent">{item.year}</time>
+              <time className="text-sm font-medium text-accent">
+                {item.year}
+              </time>
 
               <div>
                 <h3 className="text-lg font-semibold text-foreground">
