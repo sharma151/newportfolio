@@ -51,6 +51,7 @@ export const siteConfig = {
   location: "India",
   resumeUrl: "/resume/saurav-sharma-resume.pdf",
   githubUsername: "sharma151",
+  profileImage: "/avatar.png",
 };
 
 export const socialLinks: SocialLink[] = [
