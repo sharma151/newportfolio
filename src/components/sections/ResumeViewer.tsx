@@ -111,7 +111,7 @@ export function ResumeViewer() {
           <p className="mt-2 text-muted-foreground">{siteConfig.title}</p>
         </div>
 
-        <div
+        {/* <div
           ref={toolbarRef}
           className="sticky top-32 z-40 mb-6 flex flex-wrap items-center justify-center gap-4 rounded-2xl border border-border bg-card/90 p-4 backdrop-blur-xl sm:justify-between md:top-24"
           role="toolbar"
@@ -177,6 +177,87 @@ export function ResumeViewer() {
           <Button size="sm" onClick={handleDownload} data-cursor="interactive">
             <Download className="h-4 w-4" aria-hidden="true" />
             Download PDF
+          </Button>
+        </div> */}
+        <div
+          ref={toolbarRef}
+          className="sticky top-24 z-40 mb-6 flex flex-nowrap items-center justify-between gap-1 rounded-2xl border border-border bg-card/90 px-2 py-3 backdrop-blur-xl sm:gap-4 sm:p-4 md:top-24"
+          role="toolbar"
+          aria-label="Resume controls"
+        >
+          {/* Page Navigation */}
+          <div className="flex items-center gap-0.5 sm:gap-2">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="h-8 w-8 p-0"
+              onClick={() => setPageNumber((p) => Math.max(p - 1, 1))}
+              disabled={pageNumber <= 1 || hasError}
+              aria-label="Previous page"
+            >
+              <ChevronLeft className="h-4 w-4" />
+            </Button>
+            <span className="min-w-[45px] text-center text-xs text-muted-foreground sm:min-w-[80px] sm:text-sm">
+              {isLoading || hasError ? "—" : `${pageNumber} / ${numPages}`}
+            </span>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="h-8 w-8 p-0"
+              onClick={() => setPageNumber((p) => Math.min(p + 1, numPages))}
+              disabled={pageNumber >= numPages || hasError}
+              aria-label="Next page"
+            >
+              <ChevronRight className="h-4 w-4" />
+            </Button>
+          </div>
+
+          {/* Zoom Controls */}
+          <div className="flex items-center gap-0.5 sm:gap-2">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="h-8 w-8 p-0"
+              onClick={() => setScale((s) => Math.max(s - ZOOM_STEP, MIN_ZOOM))}
+              disabled={scale <= MIN_ZOOM || hasError}
+              aria-label="Zoom out"
+            >
+              <Minus className="h-4 w-4" />
+            </Button>
+            <span className="min-w-[40px] text-center text-xs text-muted-foreground sm:min-w-[50px] sm:text-sm">
+              {Math.round(scale * 100)}%
+            </span>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="h-8 w-8 p-0"
+              onClick={() => setScale((s) => Math.min(s + ZOOM_STEP, MAX_ZOOM))}
+              disabled={scale >= MAX_ZOOM || hasError}
+              aria-label="Zoom in"
+            >
+              <Plus className="h-4 w-4" />
+            </Button>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="h-8 w-8 p-0"
+              onClick={() => setScale(1)}
+              disabled={hasError}
+              aria-label="Reset zoom"
+            >
+              <RotateCcw className="h-4 w-4" />
+            </Button>
+          </div>
+
+          {/* Download Button */}
+          <Button
+            size="sm"
+            className="h-8 px-2 sm:px-3"
+            onClick={handleDownload}
+            data-cursor="interactive"
+          >
+            <Download className="h-4 w-4 sm:mr-2" aria-hidden="true" />
+            <span className="hidden sm:inline">Download PDF</span>
           </Button>
         </div>
 
