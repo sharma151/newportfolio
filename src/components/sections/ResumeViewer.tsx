@@ -11,7 +11,7 @@ import {
   RotateCcw,
 } from "lucide-react";
 import dynamic from "next/dynamic";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { siteConfig } from "@/data/portfolioData";
 import { gsap, registerScrollTrigger } from "@/hooks/useScrollTrigger";
@@ -44,6 +44,16 @@ export function ResumeViewer() {
   const [scale, setScale] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      if (window.innerWidth < 640) {
+        setScale(0.55);
+      } else if (window.innerWidth < 768) {
+        setScale(0.8);
+      }
+    }
+  }, []);
 
   useGSAP(
     () => {
@@ -84,7 +94,7 @@ export function ResumeViewer() {
   return (
     <section
       ref={sectionRef}
-      className="px-6 py-24 lg:px-8"
+      className="px-6 pb-24 pt-32 lg:px-8 lg:pb-32 lg:pt-36"
       aria-labelledby="resume-heading"
     >
       <div className="mx-auto max-w-4xl">
@@ -103,7 +113,7 @@ export function ResumeViewer() {
 
         <div
           ref={toolbarRef}
-          className="sticky top-20 z-40 mb-6 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-border bg-card/90 p-4 backdrop-blur-xl"
+          className="sticky top-32 z-40 mb-6 flex flex-wrap items-center justify-center gap-4 rounded-2xl border border-border bg-card/90 p-4 backdrop-blur-xl sm:justify-between md:top-24"
           role="toolbar"
           aria-label="Resume controls"
         >
@@ -209,7 +219,7 @@ export function ResumeViewer() {
           <a
             href={siteConfig.resumeUrl}
             download={resumeFilename}
-            className="text-accent hover:underline"
+            className="rounded-full border p-4 text-accent hover:underline"
             data-cursor="interactive"
           >
             Download resume directly
