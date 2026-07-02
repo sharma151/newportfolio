@@ -2,13 +2,35 @@
 
 import { useGSAP } from "@gsap/react";
 import { ArrowUpRight, Clock } from "lucide-react";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Badge } from "@/components/ui/Badge";
 import { mediumArticles } from "@/data/portfolioData";
 import { gsap, registerScrollTrigger } from "@/hooks/useScrollTrigger";
+import axios from "axios";
 
 export function MediumArticles() {
   const sectionRef = useRef<HTMLElement>(null);
+  const [articles, setArticles] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  console.log("MediumArticles component rendered", articles);
+
+  useEffect(() => {
+    const fetchArticles = async () => {
+      try {
+        const res = await axios.get(
+          "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@connect2saurav"
+        );
+        setArticles(res.data.items.slice(0, 4)); // Show latest 4
+      } catch (error) {
+        console.error("Error fetching Medium articles:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchArticles();
+  }, []);
 
   useGSAP(
     () => {
@@ -57,10 +79,10 @@ export function MediumArticles() {
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2">
-          {mediumArticles.map((article) => (
+          {articles.map((article: any) => (
             <a
-              key={article.id}
-              href={article.url}
+              key={article.guid ?? article.link}
+              href={article.link}
               target="_blank"
               rel="noopener noreferrer"
               data-cursor="interactive"
@@ -75,11 +97,11 @@ export function MediumArticles() {
 
               <div className="relative z-10">
                 <div className="flex items-center gap-3">
-                  <Badge variant="outline">{article.category}</Badge>
-                  <span className="flex items-center gap-1 text-xs text-muted-foreground">
-                    <Clock className="h-3 w-3" aria-hidden="true" />
-                    {article.readTime}
-                  </span>
+                  {article.categories.slice(0, 3).map((category: string) => (
+                    <Badge variant="outline" key={category}>
+                      {category}
+                    </Badge>
+                  ))}
                 </div>
 
                 <h3 className="mt-4 text-lg font-semibold leading-snug text-foreground transition-colors group-hover:text-accent">
@@ -87,12 +109,12 @@ export function MediumArticles() {
                 </h3>
 
                 <p className="mt-3 line-clamp-2 text-sm leading-relaxed text-muted-foreground">
-                  {article.excerpt}
+                  {article.description.replace(/<[^>]+>/g, "")}
                 </p>
 
                 <div className="mt-6 flex items-center justify-between">
                   <span className="text-xs text-muted-foreground">
-                    {article.date}
+                    {new Date(article.pubDate).toLocaleDateString()}
                   </span>
                   <ArrowUpRight
                     className="h-4 w-4 text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent"
