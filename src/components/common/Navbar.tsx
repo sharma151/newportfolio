@@ -154,7 +154,9 @@ export function Navbar() {
           )}
 
           <Link
-            href={`mailto:${siteConfig.email}`}
+            href={`https://wa.me/${siteConfig.whatsappNumber}`}
+            target="_blank"
+            rel="noopener noreferrer"
             data-cursor="interactive"
             className="hidden rounded-full bg-foreground px-5 py-2 text-sm font-medium text-background transition-opacity hover:opacity-90 sm:inline-flex"
           >

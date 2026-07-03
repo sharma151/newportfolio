@@ -1,7 +1,7 @@
 "use client";
 
 import { useGSAP } from "@gsap/react";
-// import Image from "next/image";
+import Image from "next/image";
 import { useRef } from "react";
 import { siteConfig } from "@/data/portfolioData";
 import { gsap, registerScrollTrigger } from "@/hooks/useScrollTrigger";
@@ -40,22 +40,11 @@ export function AboutIntro() {
   return (
     <section
       ref={sectionRef}
-      className="px-6 pb-16 pt-32 lg:px-8"
+      className="flex justify-center px-6 pb-16 pt-32 lg:px-12"
       aria-labelledby="about-intro-heading"
     >
-      <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-20">
-        {/* <div ref={imageRef} className="relative aspect-[4/5] overflow-hidden rounded-2xl">
-          <Image
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80"
-            alt={`Portrait of ${siteConfig.name}`}
-            fill
-            className="object-cover"
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            priority
-          />
-          <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-border" aria-hidden="true" />
-        </div> */}
-
+      {/* Added lg:justify-items-center to keep things balanced on big screens */}
+      <div className="mx-auto grid w-full max-w-7xl items-center justify-center gap-12 lg:grid-cols-2 lg:justify-items-center lg:gap-20">
         <div ref={textRef}>
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-accent">
             About
@@ -69,16 +58,38 @@ export function AboutIntro() {
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
             I&apos;m {siteConfig.name}, a {siteConfig.title.toLowerCase()} based
-            in {siteConfig.location}. With over 8 years of experience, I
+            in {siteConfig.location}. With over 2 years of experience, I
             specialize in crafting performant, accessible, and visually stunning
             web applications that push the boundaries of what&apos;s possible in
             the browser.
           </p>
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-            My work sits at the intersection of engineering precision and
-            creative expression — from design systems used by millions to
-            award-winning campaign experiences for global brands.
+            Currently I work as a Frontend Developer at Young Innovation Pvt.
+            Ltd., Nepal focusing on developing secure, scalable, and
+            user-friendly web applications. I hold a degree in Computer Science
+            Engineering and have a strong interest in cybersecurity and modern
+            web technologies.
           </p>
+        </div>
+
+        {/* Removed unnecessary inner flex row wrapper for desktop view to prevent centering issues */}
+        <div
+          ref={imageRef}
+          className="relative aspect-square w-full max-w-[200px] overflow-hidden rounded-full md:max-w-[350px]"
+        >
+          <Image
+            src={siteConfig.profileImage}
+            alt={`Portrait of ${siteConfig.name}`}
+            fill
+            className="object-cover"
+            sizes="(max-width: 1024px) 50vw, 50vw"
+            priority
+          />
+          {/* Circular border overlay */}
+          <div
+            className="absolute inset-0 rounded-full ring-1 ring-inset ring-border"
+            aria-hidden="true"
+          />
         </div>
       </div>
     </section>

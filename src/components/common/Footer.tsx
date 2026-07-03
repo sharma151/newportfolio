@@ -9,6 +9,7 @@ import {
   LinkedInIcon,
   MailIcon,
   TwitterIcon,
+  InstagramIcon,
 } from "@/components/ui/SocialIcons";
 import { siteConfig, socialLinks } from "@/data/portfolioData";
 import { gsap, registerScrollTrigger } from "@/hooks/useScrollTrigger";
@@ -19,6 +20,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   LinkedIn: LinkedInIcon,
   Email: MailIcon,
   Twitter: TwitterIcon,
+  Instagram: InstagramIcon,
 };
 
 export function Footer() {
@@ -56,8 +58,8 @@ export function Footer() {
       className="border-t border-border bg-background"
       role="contentinfo"
     >
-      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto max-w-7xl px-6 py-10 lg:px-0">
+        <div className="grid gap-12 px-0 md:grid-cols-2 lg:grid-cols-3 lg:px-8">
           <div data-footer-reveal>
             <Link
               href="/"
@@ -131,15 +133,15 @@ export function Footer() {
 
         <div
           data-footer-reveal
-          className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row"
+          className="mt-16 flex flex-col items-center justify-center gap-4 border-t border-border pt-8 sm:flex-row"
         >
           <p className="text-xs text-muted-foreground">
             &copy; {new Date().getFullYear()} {siteConfig.name}. All rights
             reserved.
           </p>
-          <p className="text-xs text-muted-foreground">
+          {/* <p className="text-xs text-muted-foreground">
             Crafted with precision in {siteConfig.location}
-          </p>
+          </p> */}
         </div>
       </div>
     </footer>
