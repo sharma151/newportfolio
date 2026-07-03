@@ -41,7 +41,7 @@ export function HeroSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex min-h-screen flex-col items-center justify-center px-6 pt-24"
+      className="relative flex min-h-[70vh] flex-col items-center justify-center px-6 pt-16 md:min-h-screen md:pt-24"
       aria-labelledby="hero-heading"
     >
       <div
@@ -98,7 +98,7 @@ export function HeroSection() {
       </div>
 
       <div
-        className="absolute bottom-12 left-1/2 -translate-x-1/2"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 md:bottom-12"
         aria-hidden="true"
       >
         <ArrowDown className="h-5 w-5 animate-bounce text-muted-foreground" />

@@ -75,7 +75,7 @@ export function AboutIntro() {
         {/* Removed unnecessary inner flex row wrapper for desktop view to prevent centering issues */}
         <div
           ref={imageRef}
-          className="relative aspect-square w-full max-w-[200px] overflow-hidden rounded-full md:max-w-[350px]"
+          className="relative mx-auto aspect-square w-full max-w-[200px] overflow-hidden rounded-full md:max-w-[350px]"
         >
           <Image
             src={siteConfig.profileImage}
