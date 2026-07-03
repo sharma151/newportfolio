@@ -121,17 +121,25 @@ export const educationExperience: EducationExperienceItem[] = [
 
 export const projects: ProjectItem[] = [
   {
-    id: "infosnap",
-    title: "InfoSnap",
+    id: "ATFM",
+    title: "ATFM-(Air Traffic Flow Management)",
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80",
     github: "https://github.com/sauravsharma/infosnap",
     live: "https://infosnap.dev",
     info: "Real-time analytics dashboard with fluid data visualizations and sub-16ms render performance.",
     category: "SaaS",
-    tags: ["Next.js", "D3.js", "WebSockets", "TypeScript"],
+    tags: [
+      "React.js",
+      "TypeScript",
+      "Ant Design",
+      "SSE",
+      "Leaflet.js",
+      "Recharts",
+      "Tanstack Query",
+    ],
     year: "2025",
-    role: "Lead Frontend Engineer",
+    role: " Frontend Developer",
     description:
       "InfoSnap is a real-time analytics platform designed for product teams who need instant insights without sacrificing visual polish. The interface features fluid chart morphing, intelligent data density adaptation, and a custom rendering engine that maintains 60fps even with 50k+ data points. Built with a modular widget architecture and strict accessibility compliance.",
   },
