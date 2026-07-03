@@ -124,7 +124,7 @@ export function MediumArticles() {
                   />
 
                   <div className="relative z-10">
-                    <div className="flex items-center gap-3">
+                    <div className="flex flex-wrap items-center gap-3">
                       {article.categories
                         ?.slice(0, 3)
                         .map((category: string) => (
