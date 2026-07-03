@@ -52,6 +52,7 @@ export const siteConfig = {
   resumeUrl: "/resume/saurav-sharma-resume.pdf",
   githubUsername: "sharma151",
   profileImage: "/avatar.png",
+  whatsappNumber: "8873274641", // Add your WhatsApp number here without the '+' sign
 };
 
 export const socialLinks: SocialLink[] = [
@@ -67,14 +68,19 @@ export const socialLinks: SocialLink[] = [
   },
   {
     name: "Email",
-    href: "mailto:hello@sauravsharma.dev",
+    href: "mailto:sharmasaurav150503@gmail.com",
     label: "Send an email",
   },
   {
-    name: "Twitter",
-    href: "https://twitter.com/sauravsharma",
-    label: "Follow on Twitter",
+    name: "Instagram",
+    href: "https://www.instagram.com/sharma_saurav_1303/",
+    label: "Follow on Instagram",
   },
+  // {
+  //   name: "Twitter",
+  //   href: "https://twitter.com/sauravsharma",
+  //   label: "Follow on Twitter",
+  // },
 ];
 
 export const educationExperience: EducationExperienceItem[] = [
