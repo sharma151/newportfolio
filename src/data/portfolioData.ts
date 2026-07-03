@@ -122,26 +122,139 @@ export const educationExperience: EducationExperienceItem[] = [
 export const projects: ProjectItem[] = [
   {
     id: "ATFM",
-    title: "ATFM-(Air Traffic Flow Management)",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80",
+    title: "ATFM (Air Traffic Flow Management)",
+    image: "/Projects-img/ATFM-A-CDM-cover.png",
     github: "https://github.com/sauravsharma/infosnap",
     live: "https://infosnap.dev",
-    info: "Real-time analytics dashboard with fluid data visualizations and sub-16ms render performance.",
-    category: "SaaS",
+    category: "Web Application / Aviation",
     tags: [
       "React.js",
       "TypeScript",
       "Ant Design",
-      "SSE",
+      "SSE (Server-Sent Events)",
       "Leaflet.js",
       "Recharts",
-      "Tanstack Query",
+      "TanStack Query",
     ],
     year: "2025",
-    role: " Frontend Developer",
+    role: "Frontend Developer",
+    info: "Real-time air traffic flow and flight scheduling platform featuring live AMHS data streams, weather forecasts, and regional Ground Delay Programs (GDP).",
     description:
-      "InfoSnap is a real-time analytics platform designed for product teams who need instant insights without sacrificing visual polish. The interface features fluid chart morphing, intelligent data density adaptation, and a custom rendering engine that maintains 60fps even with 50k+ data points. Built with a modular widget architecture and strict accessibility compliance.",
+      "An enterprise-grade real-time system designed to modernize airport operations and minimize airborne delays at TIA by addressing key stakeholder pain points. As a frontend developer on the team, my key responsibilities centered around full UI development and engineering complex data interfaces. I utilized Ant Design to build a clean, highly accessible user experience capable of handling large-scale data virtualization. To support real-time situational awareness, I integrated Server-Sent Events (SSE) for instant flight updates and notification streaming, alongside dynamic graphs and maps powered by Recharts and Leaflet.js. The platform ingests live flight messages from the Aeronautical Message Handling System (AMHS) to calculate exact flight timings, incorporate weather forecasts, and implement a Ground Delay Program (GDP) tailored for regional airports across Nepal.",
+  },
+  {
+    id: "whatsapp-clone",
+    title: "Real-Time Chat Application",
+    image:
+      "https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?w=1200&q=80", // Replace with your actual project screenshot
+    github: "https://github.com/sauravsharma/whatsapp-clone", // Update with your repository link
+    live: "https://chat-clone.dev", // Update with your live link if applicable
+    category: "Full-Stack Web Application",
+    tags: [
+      "React.js",
+      "TanStack Router",
+      "Shadcn/UI",
+      "Tailwind CSS",
+      "WebSockets",
+      "Node.js",
+      "PostgreSQL",
+    ],
+    year: "2025",
+    role: "Full-Stack Developer",
+    info: "A full-stack, real-time messaging platform featuring secure authentication, instant individual and group chats, and media sharing.",
+    description:
+      "A production-ready communication platform designed to replicate modern instant messaging workflows. As the developer, I built a highly responsive frontend using React and Shadcn/UI components, leveraging TanStack Router for type-safe, nested routing and seamless page transitions. The backend is powered by Node.js and PostgreSQL to manage relational user data, secure authentication, and chat histories. For the core messaging experience, I implemented WebSockets to handle real-time bi-directional communication, enabling instant delivery for individual messages, dynamic group chat creation, active user statuses, and live image uploads, all while maintaining data consistency across connected clients.",
+  },
+  {
+    id: "social-media-platform",
+    title: "Social Media Platform",
+    image:
+      "https://images.unsplash.com/photo-1665470909905-129dada26242?q=80&w=1112&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    github: "https://github.com/sauravsharma/facebook-clone",
+    live: "https://social-connect.dev",
+    category: "Web Application",
+    tags: ["React.js (JSX)", "TanStack Query", "Tailwind CSS", "Context API"],
+    year: "2025",
+    role: "Frontend Developer",
+    info: "A dynamic social networking frontend featuring full CRUD functionality for posts, engagement interactions, and detailed user profile customization.",
+    description:
+      "A responsive social media interface designed to handle core community-building interactions. Built using pure React JSX components and styled entirely with Tailwind CSS, the application focuses on clean UI states and fluid layouts. Key responsibilities included implementing full CRUD functionality for user feeds, allowing users to seamlessly create, read, and delete posts. I engineered the interactive engagement features, including dynamic like/dislike toggles, and developed comprehensive profile management tools that enable users to upload and update both profile avatars and cover images. State management and efficient data synchronized views were handled using TanStack tools to ensure a smooth, lag-free user experience during feed interactions.",
+  },
+  {
+    id: "infosnap",
+    title: "InfoSnap Generator Hub",
+    image:
+      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&q=80",
+    github: "https://github.com/sauravsharma/infosnap-hub",
+    live: "https://infosnap-generator.dev",
+    category: "Web Application",
+    tags: [
+      "React.js",
+      "React Context API",
+      "Sass / SCSS",
+      "Sass/SCSS Modules",
+      "Client-Side File Export",
+    ],
+    year: "2024",
+    role: "Frontend Developer",
+    info: "A versatile data-to-asset generation utility for creating custom QR codes, barcodes, and downloadable digital business cards using React Context API.",
+    description:
+      "A versatile utility hub designed to transform user inputs into scannable assets and professional identifiers instantly. Built using React and structured with modular Sass/SCSS, the application leverages the React Context API to manage global state across complex input forms, dynamic layouts, and real-time generation previews. As the developer, I integrated dedicated barcode and QR code packages to handle instantaneous data parsing and rendering. To deliver a seamless user experience, I engineered layout customization options for digital business cards and implemented file exporting mechanisms that convert live JSX elements into high-resolution PNG images or print-ready PDF downloads directly from the browser.",
+  },
+  {
+    id: "task-scheduler",
+    title: "Date-Driven Task Scheduler",
+    image:
+      "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=1200&q=80", // Replace with your actual project screenshot
+    github: "https://github.com/sauravsharma/task-scheduler", // Update with your repository link
+    live: "https://scheduler.dev", // Update with your live link if applicable
+    category: "Web Application",
+    tags: [
+      "React.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Context API / State Management",
+    ],
+    year: "2024",
+    role: "Frontend Developer",
+    info: "A type-safe productivity application featuring dynamic calendar rendering and full CRUD capabilities for date-specific task organization.",
+    description:
+      "A productivity application engineered to streamline daily workflows through date-specific task management. Developed entirely with TypeScript and structured for high maintainability, the platform leverages React to handle complex interactive calendar states and timeline views. I built a clean, minimalist UI using Tailwind CSS, ensuring complete visual responsiveness across desktop and mobile devices. Key technical implementations included developing full CRUD functionality—allowing users to seamlessly create, read, edit, delete, and persist tasks—alongside a robust state engine that aligns scheduling data with precise date contexts for reliable data accuracy.",
+  },
+  {
+    id: "modern-calculator",
+    title: "Interactive Web Calculator",
+    image:
+      "https://images.unsplash.com/photo-1643894333833-d0be51338dd3?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Replace with your actual project screenshot
+    github: "https://github.com/sauravsharma/modern-calculator", // Update with your repository link
+    live: "https://calculator.dev", // Update with your live link if applicable
+    category: "Web Application",
+    tags: ["JavaScript (ES6+)", "HTML5", "CSS3 / Flexbox", "UI/UX Design"],
+    year: "2024",
+    role: "Frontend Developer",
+    info: "A sleek, responsive mathematical utility featuring dynamic input handling and smooth mathematical evaluation.",
+    description:
+      "A clean, responsive mathematical utility designed to provide a highly interactive client-side execution experience. Built using semantic HTML5 and vanilla JavaScript (ES6+), the application implements an immediate-execution logic engine to evaluate basic arithmetic operations reliably. I engineered the user interface utilizing modern CSS layouts like Flexbox and Grid to guarantee fluid scalability across varying screen sizes. The development focused on crafting a polished user experience, incorporating intuitive button active states, input validation to handle edge cases gracefully, and continuous display updates for seamless interaction.",
+  },
+  {
+    id: "weather-tracker",
+    title: "Real-Time Weather Tracker",
+    image:
+      "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=1200&q=80", // Replace with your actual project screenshot
+    github: "https://github.com/sauravsharma/weather-app", // Update with your repository link
+    live: "https://weather-vision.dev", // Update with your live link if applicable
+    category: "Web Application",
+    tags: [
+      "JavaScript (ES6+)",
+      "Asynchronous Fetch API",
+      "JSON Data Parsing",
+      "HTML5 / CSS3",
+    ],
+    year: "2024",
+    role: "Frontend Developer",
+    info: "A responsive weather application utilizing asynchronous API integration to deliver real-time atmospheric forecasts and current conditions.",
+    description:
+      "A clean, responsive weather forecast application designed to demonstrate seamless third-party data integration and asynchronous frontend architecture. Built using vanilla JavaScript (ES6+), semantic HTML5, and modern CSS layouts, the application connects to a public weather API using the Fetch API to retrieve live, location-based meteorological data. I engineered the asynchronous data flow to handle network states gracefully, parse JSON payloads efficiently, and instantly update the DOM with current temperatures, wind speeds, and regional forecast matrices. Special attention was paid to creating an intuitive user interface that shifts visually to present up-to-date atmospheric conditions across mobile and desktop displays.",
   },
   {
     id: "devflow",
@@ -157,66 +270,6 @@ export const projects: ProjectItem[] = [
     role: "Full-Stack Engineer",
     description:
       "DevFlow streamlines the entire development lifecycle from PR to production. Features include AI-powered code review suggestions, visual deployment pipelines, and a collaborative debugging workspace. The frontend leverages optimistic UI patterns and real-time collaboration via CRDTs.",
-  },
-  {
-    id: "nexus-ui",
-    title: "Nexus UI",
-    image:
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80",
-    github: "https://github.com/sauravsharma/nexus-ui",
-    live: "https://nexus-ui.dev",
-    info: "Open-source design system with 80+ accessible components and advanced motion primitives.",
-    category: "Design System",
-    tags: ["React", "Storybook", "Radix UI", "GSAP"],
-    year: "2024",
-    role: "Design Systems Lead",
-    description:
-      "Nexus UI is a comprehensive design system built for teams who refuse to compromise between aesthetics and accessibility. Every component ships with WCAG 2.2 AA compliance, comprehensive Storybook documentation, and optional GSAP-powered motion variants.",
-  },
-  {
-    id: "pulse-analytics",
-    title: "Pulse Analytics",
-    image:
-      "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80",
-    github: "https://github.com/sauravsharma/pulse-analytics",
-    live: null,
-    info: "Privacy-first web analytics with beautiful, customizable reporting dashboards.",
-    category: "SaaS",
-    tags: ["Vue.js", "PostgreSQL", "Redis", "Docker"],
-    year: "2023",
-    role: "Frontend Architect",
-    description:
-      "Pulse Analytics reimagines web analytics with a privacy-first approach and stunning data presentation. Features include custom event tracking, funnel analysis, and heatmap overlays — all rendered with GPU-accelerated canvas visualizations.",
-  },
-  {
-    id: "cipher-vault",
-    title: "Cipher Vault",
-    image:
-      "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&q=80",
-    github: "https://github.com/sauravsharma/cipher-vault",
-    live: "https://ciphervault.app",
-    info: "End-to-end encrypted password manager with biometric authentication and seamless sync.",
-    category: "Security",
-    tags: ["Next.js", "Web Crypto API", "PWA", "IndexedDB"],
-    year: "2023",
-    role: "Lead Engineer",
-    description:
-      "Cipher Vault delivers military-grade encryption with consumer-grade UX. Zero-knowledge architecture ensures data never leaves the client unencrypted. Features include biometric unlock, secure sharing, and offline-first PWA capabilities.",
-  },
-  {
-    id: "atlas-maps",
-    title: "Atlas Maps",
-    image:
-      "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1200&q=80",
-    github: "https://github.com/sauravsharma/atlas-maps",
-    live: "https://atlasmaps.co",
-    info: "Interactive 3D globe visualization platform for geospatial data storytelling.",
-    category: "Data Viz",
-    tags: ["Three.js", "Mapbox", "WebGL", "TypeScript"],
-    year: "2022",
-    role: "Creative Technologist",
-    description:
-      "Atlas Maps transforms complex geospatial datasets into immersive 3D narratives. Users can fly through data layers, scrub timelines, and export cinematic flythrough videos. Built on Three.js with custom shader pipelines for atmospheric effects.",
   },
 ];
 
