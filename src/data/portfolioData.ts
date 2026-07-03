@@ -351,3 +351,78 @@ export function getFeaturedProjects(): ProjectItem[] {
     .map((id) => getProjectById(id))
     .filter((p): p is ProjectItem => p !== undefined);
 }
+
+export interface HobbyHighlight {
+  title: string;
+  description: string;
+  image?: string; // Optional image for the highlight
+}
+
+export interface HobbyDetail {
+  id: string;
+  title: string;
+  description: string;
+  coverImage: string;
+  highlights: HobbyHighlight[];
+}
+
+export const hobbiesDetailData: HobbyDetail[] = [
+  {
+    id: "trekking",
+    title: "Trekking",
+    description: "Conquering high altitudes and embracing the serenity of nature. Here are some of the remarkable places I've trekked.",
+    coverImage: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=1200&q=80",
+    highlights: [
+      {
+        title: "Annapurna Base Camp",
+        description: "A breathtaking journey through the Himalayas, reaching an altitude of 4,130m with stunning panoramic views.",
+        image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
+      },
+      {
+        title: "Everest Base Camp",
+        description: "The ultimate trekking adventure to the base of the world's highest peak.",
+      },
+      // Add more real places here!
+    ],
+  },
+  {
+    id: "hiking",
+    title: "Hiking",
+    description: "Exploring new trails and finding peace away from the screen. A collection of my favorite day hikes.",
+    coverImage: "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=1200&q=80",
+    highlights: [
+      {
+        title: "Shivapuri Peak",
+        description: "A beautiful day hike offering lush green forests and a panoramic view of the Kathmandu valley.",
+        image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80",
+      },
+      {
+        title: "Champadevi Hill",
+        description: "A serene hike on the southern rim of the valley perfect for a quick nature escape.",
+      },
+      // Add more real hikes here!
+    ],
+  },
+  {
+    id: "music",
+    title: "Music",
+    description: "Curating vibes and finding rhythm in every step of the journey. Here's what I've been listening to.",
+    coverImage: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=1200&q=80",
+    highlights: [
+      {
+        title: "Lo-Fi Coding Beats",
+        description: "The essential background music that fuels my late-night coding sessions.",
+        image: "https://images.unsplash.com/photo-1516280440502-86971933e8b4?w=800&q=80",
+      },
+      {
+        title: "Acoustic Sunsets",
+        description: "Mellow acoustic tracks perfect for winding down after a long trek.",
+      },
+      // Add your real playlists or favorite genres here!
+    ],
+  },
+];
+
+export function getHobbyById(id: string): HobbyDetail | undefined {
+  return hobbiesDetailData.find((hobby) => hobby.id === id);
+}
