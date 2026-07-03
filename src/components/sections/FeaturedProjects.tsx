@@ -94,6 +94,8 @@ export function FeaturedProjects() {
                   src={project.image}
                   alt={project.title}
                   fill
+                  quality={100}
+                  priority
                   className="object-cover transition-transform duration-700 ease-premium group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />

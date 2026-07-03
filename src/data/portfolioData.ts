@@ -121,7 +121,7 @@ export const educationExperience: EducationExperienceItem[] = [
 
 export const projects: ProjectItem[] = [
   {
-    id: "ATFM",
+    id: "atfm",
     title: "ATFM (Air Traffic Flow Management)",
     image: "/Projects-img/ATFM-A-CDM-cover.png",
     github: "https://github.com/sauravsharma/infosnap",
@@ -273,7 +273,7 @@ export const projects: ProjectItem[] = [
   },
 ];
 
-export const featuredProjectIds: string[] = ["infosnap", "devflow", "nexus-ui"];
+export const featuredProjectIds: string[] = ["atfm", "infosnap", "devflow"];
 
 export const projectCategories: string[] = [
   "All",
