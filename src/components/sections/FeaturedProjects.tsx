@@ -96,8 +96,9 @@ export function FeaturedProjects() {
                   fill
                   quality={100}
                   priority
+                  unoptimized
                   className="object-cover transition-transform duration-700 ease-premium group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes={index === 0 ? "(max-width: 768px) 100vw, 66vw" : "(max-width: 768px) 100vw, 33vw"}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
               </div>
