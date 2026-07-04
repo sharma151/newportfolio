@@ -61,7 +61,7 @@ export function HobbyDetail({ hobby }: HobbyDetailProps) {
   return (
     <article ref={containerRef} className="min-h-screen px-6 py-24 lg:px-12">
       <div className="mx-auto max-w-4xl">
-        <div className="mb-12">
+        <div className="mt-7 md:mt-0 mb-12">
           <Link href="/about" data-cursor="interactive">
             <Button variant="ghost" className="gap-2 -ml-4">
               <ArrowLeft className="h-4 w-4" />
@@ -94,30 +94,62 @@ export function HobbyDetail({ hobby }: HobbyDetailProps) {
 
         {hobby.highlights.length > 0 && (
           <div className="mt-20">
-            <h2 className="text-2xl font-bold tracking-tight">Highlights</h2>
-            <div ref={highlightsRef} className="mt-8 grid gap-8 sm:grid-cols-2">
-              {hobby.highlights.map((highlight, index) => (
-                <div
-                  key={index}
-                  className="group overflow-hidden rounded-2xl border border-border/50 bg-card p-6 transition-colors hover:bg-muted/50"
-                >
-                  {highlight.image && (
-                    <div className="relative -mx-6 -mt-6 mb-6 aspect-video overflow-hidden border-b border-border/50">
+            <h2 className="text-2xl font-bold tracking-tight">
+              {hobby.id === "photography" ? "Gallery" : "Highlights"}
+            </h2>
+            {hobby.id === "photography" ? (
+              <div ref={highlightsRef} className="mt-8 grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:auto-rows-[300px]">
+                {hobby.highlights.map((highlight, index) => (
+                  <div
+                    key={index}
+                    className={`group relative overflow-hidden rounded-2xl bg-muted min-h-[250px] md:min-h-0 ${highlight.className || ""}`}
+                  >
+                    {highlight.image && (
                       <Image
                         src={highlight.image}
-                        alt={highlight.title}
+                        alt={highlight.title || "Photography"}
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
-                    </div>
-                  )}
-                  <h3 className="text-xl font-semibold">{highlight.title}</h3>
-                  <p className="mt-2 leading-relaxed text-muted-foreground">
-                    {highlight.description}
-                  </p>
-                </div>
-              ))}
-            </div>
+                    )}
+                    {(highlight.description || highlight.title) && (
+                      <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6 text-center">
+                        <div>
+                          {highlight.title && <h3 className="text-white font-semibold mb-2">{highlight.title}</h3>}
+                          {highlight.description && <p className="text-white/90 text-sm">{highlight.description}</p>}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div ref={highlightsRef} className="mt-8 grid gap-8 sm:grid-cols-2">
+                {hobby.highlights.map((highlight, index) => (
+                  <div
+                    key={index}
+                    className="group overflow-hidden rounded-2xl border border-border/50 bg-card p-6 transition-colors hover:bg-muted/50"
+                  >
+                    {highlight.image && (
+                      <div className="relative -mx-6 -mt-6 mb-6 aspect-video overflow-hidden border-b border-border/50">
+                        <Image
+                          src={highlight.image}
+                          alt={highlight.title || "Highlight"}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </div>
+                    )}
+                    {highlight.title && <h3 className="text-xl font-semibold">{highlight.title}</h3>}
+                    {highlight.description && (
+                      <p className="mt-2 leading-relaxed text-muted-foreground">
+                        {highlight.description}
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         )}
       </div>

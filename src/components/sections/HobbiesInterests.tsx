@@ -2,28 +2,30 @@
 
 import { useGSAP } from "@gsap/react";
 import Link from "next/link";
-import { ArrowRight, ExternalLink, Headphones, Map, Mountain } from "lucide-react";
+import { ArrowRight, ExternalLink, Camera, Map, Mountain } from "lucide-react";
 import { useRef } from "react";
 import { gsap, registerScrollTrigger } from "@/hooks/useScrollTrigger";
 
 const hobbies = [
   {
     id: "trekking",
-    title: "Trekking",
-    description: "Conquering high altitudes and embracing the serenity of nature.",
+    title: "Trekking/Hiking",
+    description:
+      "Conquering high altitudes and embracing the serenity of nature.",
     icon: Mountain,
   },
   {
-    id: "hiking",
-    title: "Hiking",
-    description: "Exploring new trails and finding peace away from the screen.",
+    id: "travel-and-culture",
+    title: "Travel & Culture",
+    description:
+      "Exploring new cities, tasting local cuisines, and immersing myself in different cultures and perspectives.",
     icon: Map,
   },
   {
-    id: "music",
-    title: "Music",
-    description: "Curating vibes and finding rhythm in every step of the journey.",
-    icon: Headphones,
+    id: "photography",
+    title: "Photography",
+    description: "Capturing moments and telling stories through the lens.",
+    icon: Camera,
   },
 ];
 
@@ -109,7 +111,8 @@ export function HobbiesInterests() {
             Life Outside Work
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            When I&apos;m not writing code, you&apos;ll probably find me exploring the great outdoors or getting lost in a good playlist.
+            When I&apos;m not writing code, you&apos;ll probably find me
+            exploring the great outdoors or getting lost in a good playlist.
           </p>
         </div>
 
@@ -129,7 +132,7 @@ export function HobbiesInterests() {
                   <div className="flex h-12 w-12 items-center justify-center rounded-full border border-border/50 bg-background text-accent transition-colors group-hover:bg-accent group-hover:text-white">
                     <hobby.icon className="h-5 w-5" />
                   </div>
-                  <ArrowRight className="h-5 w-5 text-muted-foreground opacity-0 -translate-x-4 transition-all group-hover:opacity-100 group-hover:translate-x-0 group-hover:text-accent" />
+                  <ArrowRight className="h-5 w-5 -translate-x-4 text-muted-foreground opacity-0 transition-all group-hover:translate-x-0 group-hover:text-accent group-hover:opacity-100" />
                 </div>
                 <h3 className="mt-6 text-xl font-semibold text-foreground">
                   {hobby.title}

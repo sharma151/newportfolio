@@ -353,9 +353,10 @@ export function getFeaturedProjects(): ProjectItem[] {
 }
 
 export interface HobbyHighlight {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   image?: string; // Optional image for the highlight
+  className?: string; // For bento grid layouts
 }
 
 export interface HobbyDetail {
@@ -369,56 +370,142 @@ export interface HobbyDetail {
 export const hobbiesDetailData: HobbyDetail[] = [
   {
     id: "trekking",
-    title: "Trekking",
-    description: "Conquering high altitudes and embracing the serenity of nature. Here are some of the remarkable places I've trekked.",
-    coverImage: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=1200&q=80",
+    title: "Trekking/Hiking",
+    description:
+      "Conquering high altitudes, exploring new trails, and finding peace away from the screen. Here are some of the remarkable places I've trekked.",
+    coverImage:
+      "https://images.unsplash.com/photo-1551632811-561732d1e306?w=1200&q=80",
     highlights: [
       {
         title: "Annapurna Base Camp",
-        description: "A breathtaking journey through the Himalayas, reaching an altitude of 4,130m with stunning panoramic views.",
-        image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
+        description:
+          "Located in the Kaski district at 4,130m. You get to stand in a massive 360-degree mountain amphitheater surrounded entirely by towering vertical walls of snow, overlooking the massive Annapurna glacier, blooming red rhododendron forests, and cascading waterfalls.",
+        image:
+          "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
       },
       {
-        title: "Everest Base Camp",
-        description: "The ultimate trekking adventure to the base of the world's highest peak.",
+        title: "Mardi Himal Base Camp",
+        description:
+          "Situated in the Annapurna region at 4,500m. Walking along a steep, narrow ridge trail, you get to see an incredibly up-close, dramatic view of the iconic Machapuchare (Fishtail) peak right in front of you, alongside low-lying clouds drifting through the valleys below.",
+        image:
+          "https://images.unsplash.com/photo-1627896157734-4d7d4388f24b?w=800&q=80",
       },
-      // Add more real places here!
+      {
+        title: "Gosaikunda Lake",
+        description:
+          "Located in the Rasuwa district at 4,380m. You get to look out over a cluster of frozen, turquoise alpine lakes nestled between jagged, rocky ridges, with sweeping views of the Langtang range stretching across the horizon.",
+        image:
+          "https://images.unsplash.com/photo-1582226871081-9b160cf2b740?w=800&q=80",
+      },
+      {
+        title: "Poon Hill & Ghandruk Trek",
+        description:
+          "A classic loop in the Myagdi and Kaski districts reaching 3,210m. You get to witness a spectacular golden sunrise illuminating the entire Dhaulagiri and Annapurna ranges, followed by walks through traditional stone-paved Gurung villages and terraced farmland.",
+        image:
+          "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+      },
+      {
+        title: "Ama Yangri Peak",
+        description:
+          "Located in the Helambu region of Sindhupalchok at 3,771m. At the summit, you get to see thousands of colorful prayer flags fluttering around a grand white chorten, offering a clear, unobstructed panorama of the Langtang and inner Himalayan peaks.",
+        image:
+          "https://images.unsplash.com/photo-1548574505-5e239809ee19?w=800&q=80",
+      },
     ],
   },
   {
-    id: "hiking",
-    title: "Hiking",
-    description: "Exploring new trails and finding peace away from the screen. A collection of my favorite day hikes.",
-    coverImage: "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=1200&q=80",
+    id: "travel-and-culture",
+    title: "Travel & Culture",
+    description:
+      "Exploring historic cities, architectural marvels, and vibrant cultures. A collection of my favorite urban escapes and heritage trails.",
+    coverImage:
+      "https://images.unsplash.com/photo-1477587458883-471a5ed94245?w=1200&q=80",
     highlights: [
       {
-        title: "Shivapuri Peak",
-        description: "A beautiful day hike offering lush green forests and a panoramic view of the Kathmandu valley.",
-        image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80",
+        title: "Jaipur",
+        description:
+          "The famed Pink City, renowned for its majestic forts like Amer Fort, intricate palaces like Hawa Mahal, and rich Rajasthani heritage.",
+        image:
+          "https://images.unsplash.com/photo-1477587458883-471a5ed94245?w=800&q=80",
       },
       {
-        title: "Champadevi Hill",
-        description: "A serene hike on the southern rim of the valley perfect for a quick nature escape.",
+        title: "Udaipur",
+        description:
+          "The City of Lakes, known for its sophisticated lake palaces, tranquil waters, and the stunning backdrop of the Aravalli Hills.",
+        image:
+          "https://images.unsplash.com/photo-1593693411515-c202e974fe08?w=800&q=80",
       },
-      // Add more real hikes here!
+      {
+        title: "Agra",
+        description:
+          "Home to the iconic Taj Mahal, a monument of timeless love, alongside the grand Agra Fort and deep Mughal architectural history.",
+        image:
+          "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&q=80",
+      },
+      {
+        title: "Bhopal",
+        description:
+          "The City of Lakes in central India, blending a historic old city packed with mosques with a modern, green layout.",
+        image:
+          "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=800&q=80",
+      },
+      {
+        title: "Bangalore",
+        description:
+          "The Garden City and Silicon Valley of India, balancing a booming high-tech pulse with lush parks and a vibrant cafe culture.",
+        image:
+          "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=800&q=80",
+      },
+      {
+        title: "Delhi",
+        description:
+          "India's bustling capital, where the historic lanes of Old Delhi seamlessly meet the grand, tree-lined avenues of New Delhi.",
+        image:
+          "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&q=80",
+      },
+      {
+        title: "Indore",
+        description:
+          "India's cleanest city, famous for its grand Rajwada Palace and an incredible street food culture at Sarafa Bazaar.",
+        image:
+          "https://images.unsplash.com/photo-1619542402915-dcaf30e4e2a1?w=800&q=80",
+      },
+      {
+        title: "Kolkata",
+        description:
+          "The City of Joy, celebrating grand colonial architecture, legendary literary history, and an unmatched artistic soul.",
+        image:
+          "https://images.unsplash.com/photo-1558431382-27e303142255?w=800&q=80",
+      },
     ],
   },
   {
-    id: "music",
-    title: "Music",
-    description: "Curating vibes and finding rhythm in every step of the journey. Here's what I've been listening to.",
-    coverImage: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=1200&q=80",
+    id: "photography",
+    title: "Photography",
+    description:
+      "Capturing perspectives, street landscapes, and visual stories during my travels and outdoor walks.",
+    coverImage:
+      "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=1200&q=80",
     highlights: [
       {
-        title: "Lo-Fi Coding Beats",
-        description: "The essential background music that fuels my late-night coding sessions.",
-        image: "https://images.unsplash.com/photo-1516280440502-86971933e8b4?w=800&q=80",
+        title: "Street Photography",
+        description: "Capturing the candid moments of everyday life in the city.",
+        image: "/photos/placeholder.jpg",
+        className: "md:col-span-1 md:row-span-2",
       },
       {
-        title: "Acoustic Sunsets",
-        description: "Mellow acoustic tracks perfect for winding down after a long trek.",
+        image: "/photos/placeholder.jpg",
+        className: "md:col-span-2 md:row-span-1",
       },
-      // Add your real playlists or favorite genres here!
+      {
+        description: "A beautiful landscape captured during sunset.",
+        image: "/photos/placeholder.jpg",
+        className: "md:col-span-1 md:row-span-1",
+      },
+      {
+        image: "/photos/placeholder.jpg",
+        className: "md:col-span-1 md:row-span-1",
+      },
     ],
   },
 ];
