@@ -61,7 +61,7 @@ export function HobbyDetail({ hobby }: HobbyDetailProps) {
   return (
     <article ref={containerRef} className="min-h-screen px-6 py-24 lg:px-12">
       <div className="mx-auto max-w-4xl">
-        <div className="mb-12">
+        <div className="mt-7 md:mt-0 mb-12">
           <Link href="/about" data-cursor="interactive">
             <Button variant="ghost" className="gap-2 -ml-4">
               <ArrowLeft className="h-4 w-4" />
