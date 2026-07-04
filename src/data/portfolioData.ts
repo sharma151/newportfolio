@@ -371,23 +371,45 @@ export const hobbiesDetailData: HobbyDetail[] = [
     id: "trekking",
     title: "Trekking/Hiking",
     description:
-      "Conquering high altitudes, exploring new trails, and finding peace away from the screen Here are some of the remarkable places I've trekked.",
+      "Conquering high altitudes, exploring new trails, and finding peace away from the screen. Here are some of the remarkable places I've trekked.",
     coverImage:
       "https://images.unsplash.com/photo-1551632811-561732d1e306?w=1200&q=80",
     highlights: [
       {
         title: "Annapurna Base Camp",
         description:
-          "A breathtaking journey through the Himalayas, reaching an altitude of 4,130m with stunning panoramic views.",
+          "Located in the Kaski district at 4,130m. You get to stand in a massive 360-degree mountain amphitheater surrounded entirely by towering vertical walls of snow, overlooking the massive Annapurna glacier, blooming red rhododendron forests, and cascading waterfalls.",
         image:
           "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
       },
       {
-        title: "Everest Base Camp",
+        title: "Mardi Himal Base Camp",
         description:
-          "The ultimate trekking adventure to the base of the world's highest peak.",
+          "Situated in the Annapurna region at 4,500m. Walking along a steep, narrow ridge trail, you get to see an incredibly up-close, dramatic view of the iconic Machapuchare (Fishtail) peak right in front of you, alongside low-lying clouds drifting through the valleys below.",
+        image:
+          "https://images.unsplash.com/photo-1627896157734-4d7d4388f24b?w=800&q=80",
       },
-      // Add more real places here!
+      {
+        title: "Gosaikunda Lake",
+        description:
+          "Located in the Rasuwa district at 4,380m. You get to look out over a cluster of frozen, turquoise alpine lakes nestled between jagged, rocky ridges, with sweeping views of the Langtang range stretching across the horizon.",
+        image:
+          "https://images.unsplash.com/photo-1582226871081-9b160cf2b740?w=800&q=80",
+      },
+      {
+        title: "Poon Hill & Ghandruk Trek",
+        description:
+          "A classic loop in the Myagdi and Kaski districts reaching 3,210m. You get to witness a spectacular golden sunrise illuminating the entire Dhaulagiri and Annapurna ranges, followed by walks through traditional stone-paved Gurung villages and terraced farmland.",
+        image:
+          "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+      },
+      {
+        title: "Ama Yangri Peak",
+        description:
+          "Located in the Helambu region of Sindhupalchok at 3,771m. At the summit, you get to see thousands of colorful prayer flags fluttering around a grand white chorten, offering a clear, unobstructed panorama of the Langtang and inner Himalayan peaks.",
+        image:
+          "https://images.unsplash.com/photo-1548574505-5e239809ee19?w=800&q=80",
+      },
     ],
   },
   {
