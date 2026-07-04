@@ -353,9 +353,10 @@ export function getFeaturedProjects(): ProjectItem[] {
 }
 
 export interface HobbyHighlight {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   image?: string; // Optional image for the highlight
+  className?: string; // For bento grid layouts
 }
 
 export interface HobbyDetail {
@@ -488,17 +489,23 @@ export const hobbiesDetailData: HobbyDetail[] = [
     highlights: [
       {
         title: "Street Photography",
-        description:
-          "Capturing the candid moments of everyday life in the city.",
-        image:
-          "https://images.unsplash.com/photo-1516280440502-86971933e8b4?w=800&q=80",
+        description: "Capturing the candid moments of everyday life in the city.",
+        image: "/photos/placeholder.jpg",
+        className: "md:col-span-1 md:row-span-2",
       },
       {
-        title: "  Landscape Photography",
-        description:
-          "Mellow acoustic tracks perfect for winding down after a long trek.",
+        image: "/photos/placeholder.jpg",
+        className: "md:col-span-2 md:row-span-1",
       },
-      // Add your real playlists or favorite genres here!
+      {
+        description: "A beautiful landscape captured during sunset.",
+        image: "/photos/placeholder.jpg",
+        className: "md:col-span-1 md:row-span-1",
+      },
+      {
+        image: "/photos/placeholder.jpg",
+        className: "md:col-span-1 md:row-span-1",
+      },
     ],
   },
 ];
