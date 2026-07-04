@@ -369,54 +369,112 @@ export interface HobbyDetail {
 export const hobbiesDetailData: HobbyDetail[] = [
   {
     id: "trekking",
-    title: "Trekking",
-    description: "Conquering high altitudes and embracing the serenity of nature. Here are some of the remarkable places I've trekked.",
-    coverImage: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=1200&q=80",
+    title: "Trekking/Hiking",
+    description:
+      "Conquering high altitudes, exploring new trails, and finding peace away from the screen Here are some of the remarkable places I've trekked.",
+    coverImage:
+      "https://images.unsplash.com/photo-1551632811-561732d1e306?w=1200&q=80",
     highlights: [
       {
         title: "Annapurna Base Camp",
-        description: "A breathtaking journey through the Himalayas, reaching an altitude of 4,130m with stunning panoramic views.",
-        image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
+        description:
+          "A breathtaking journey through the Himalayas, reaching an altitude of 4,130m with stunning panoramic views.",
+        image:
+          "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
       },
       {
         title: "Everest Base Camp",
-        description: "The ultimate trekking adventure to the base of the world's highest peak.",
+        description:
+          "The ultimate trekking adventure to the base of the world's highest peak.",
       },
       // Add more real places here!
     ],
   },
   {
-    id: "hiking",
-    title: "Hiking",
-    description: "Exploring new trails and finding peace away from the screen. A collection of my favorite day hikes.",
-    coverImage: "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=1200&q=80",
+    id: "travel-and-culture",
+    title: "Travel & Culture",
+    description:
+      "Exploring historic cities, architectural marvels, and vibrant cultures. A collection of my favorite urban escapes and heritage trails.",
+    coverImage:
+      "https://images.unsplash.com/photo-1477587458883-471a5ed94245?w=1200&q=80",
     highlights: [
       {
-        title: "Shivapuri Peak",
-        description: "A beautiful day hike offering lush green forests and a panoramic view of the Kathmandu valley.",
-        image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80",
+        title: "Jaipur",
+        description:
+          "The famed Pink City, renowned for its majestic forts like Amer Fort, intricate palaces like Hawa Mahal, and rich Rajasthani heritage.",
+        image:
+          "https://images.unsplash.com/photo-1477587458883-471a5ed94245?w=800&q=80",
       },
       {
-        title: "Champadevi Hill",
-        description: "A serene hike on the southern rim of the valley perfect for a quick nature escape.",
+        title: "Udaipur",
+        description:
+          "The City of Lakes, known for its sophisticated lake palaces, tranquil waters, and the stunning backdrop of the Aravalli Hills.",
+        image:
+          "https://images.unsplash.com/photo-1593693411515-c202e974fe08?w=800&q=80",
       },
-      // Add more real hikes here!
+      {
+        title: "Agra",
+        description:
+          "Home to the iconic Taj Mahal, a monument of timeless love, alongside the grand Agra Fort and deep Mughal architectural history.",
+        image:
+          "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&q=80",
+      },
+      {
+        title: "Bhopal",
+        description:
+          "The City of Lakes in central India, blending a historic old city packed with mosques with a modern, green layout.",
+        image:
+          "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=800&q=80",
+      },
+      {
+        title: "Bangalore",
+        description:
+          "The Garden City and Silicon Valley of India, balancing a booming high-tech pulse with lush parks and a vibrant cafe culture.",
+        image:
+          "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=800&q=80",
+      },
+      {
+        title: "Delhi",
+        description:
+          "India's bustling capital, where the historic lanes of Old Delhi seamlessly meet the grand, tree-lined avenues of New Delhi.",
+        image:
+          "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&q=80",
+      },
+      {
+        title: "Indore",
+        description:
+          "India's cleanest city, famous for its grand Rajwada Palace and an incredible street food culture at Sarafa Bazaar.",
+        image:
+          "https://images.unsplash.com/photo-1619542402915-dcaf30e4e2a1?w=800&q=80",
+      },
+      {
+        title: "Kolkata",
+        description:
+          "The City of Joy, celebrating grand colonial architecture, legendary literary history, and an unmatched artistic soul.",
+        image:
+          "https://images.unsplash.com/photo-1558431382-27e303142255?w=800&q=80",
+      },
     ],
   },
   {
-    id: "music",
-    title: "Music",
-    description: "Curating vibes and finding rhythm in every step of the journey. Here's what I've been listening to.",
-    coverImage: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=1200&q=80",
+    id: "photography",
+    title: "Photography",
+    description:
+      "Capturing perspectives, street landscapes, and visual stories during my travels and outdoor walks.",
+    coverImage:
+      "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=1200&q=80",
     highlights: [
       {
-        title: "Lo-Fi Coding Beats",
-        description: "The essential background music that fuels my late-night coding sessions.",
-        image: "https://images.unsplash.com/photo-1516280440502-86971933e8b4?w=800&q=80",
+        title: "Street Photography",
+        description:
+          "Capturing the candid moments of everyday life in the city.",
+        image:
+          "https://images.unsplash.com/photo-1516280440502-86971933e8b4?w=800&q=80",
       },
       {
-        title: "Acoustic Sunsets",
-        description: "Mellow acoustic tracks perfect for winding down after a long trek.",
+        title: "  Landscape Photography",
+        description:
+          "Mellow acoustic tracks perfect for winding down after a long trek.",
       },
       // Add your real playlists or favorite genres here!
     ],
