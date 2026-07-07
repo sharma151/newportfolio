@@ -13,6 +13,7 @@ const hobbies = [
     description:
       "Conquering high altitudes and embracing the serenity of nature.",
     icon: Mountain,
+    openDetailPage: true,
   },
   {
     id: "travel-and-culture",
@@ -20,16 +21,25 @@ const hobbies = [
     description:
       "Exploring new cities, tasting local cuisines, and immersing myself in different cultures and perspectives.",
     icon: Map,
+    openDetailPage: false,
   },
   {
     id: "photography",
     title: "Photography",
-    description: "Capturing moments and telling stories through the lens.",
+    description:
+      "Documenting life in motion—capturing personal stories, memories, and travel moments from  my perspective.",
     icon: Camera,
+    openDetailPage: false,
   },
 ];
 
-export function HobbiesInterests() {
+interface HobbiesInterestsProps {
+  openDetailPage?: boolean;
+}
+
+export function HobbiesInterests({
+  openDetailPage = true,
+}: HobbiesInterestsProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
@@ -120,19 +130,21 @@ export function HobbiesInterests() {
           ref={cardsRef}
           className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
         >
-          {hobbies.map((hobby) => (
-            <Link
-              key={hobby.id}
-              href={`/hobbies/${hobby.id}`}
-              data-cursor="interactive"
-              className="group flex flex-col justify-between rounded-xl border border-border/50 bg-card/30 p-6 transition-all hover:bg-card hover:shadow-lg hover:shadow-accent/5 dark:hover:bg-card/50"
-            >
+          {hobbies.map((hobby) => {
+            const shouldOpenDetail =
+              openDetailPage && hobby.openDetailPage !== false;
+
+            const cardContent = (
               <div>
                 <div className="flex items-center justify-between">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full border border-border/50 bg-background text-accent transition-colors group-hover:bg-accent group-hover:text-white">
+                  <div
+                    className={`flex h-12 w-12 items-center justify-center rounded-full border border-border/50 bg-background text-accent transition-colors ${shouldOpenDetail ? "group-hover:bg-accent group-hover:text-white" : ""}`}
+                  >
                     <hobby.icon className="h-5 w-5" />
                   </div>
-                  <ArrowRight className="h-5 w-5 -translate-x-4 text-muted-foreground opacity-0 transition-all group-hover:translate-x-0 group-hover:text-accent group-hover:opacity-100" />
+                  {shouldOpenDetail && (
+                    <ArrowRight className="h-5 w-5 -translate-x-4 text-muted-foreground opacity-0 transition-all group-hover:translate-x-0 group-hover:text-accent group-hover:opacity-100" />
+                  )}
                 </div>
                 <h3 className="mt-6 text-xl font-semibold text-foreground">
                   {hobby.title}
@@ -141,8 +153,25 @@ export function HobbiesInterests() {
                   {hobby.description}
                 </p>
               </div>
-            </Link>
-          ))}
+            );
+
+            const className = `group flex flex-col justify-between rounded-xl border border-border/50 bg-card/30 p-6 transition-all ${shouldOpenDetail ? "hover:bg-card hover:shadow-lg hover:shadow-accent/5 dark:hover:bg-card/50" : ""}`;
+
+            return shouldOpenDetail ? (
+              <Link
+                key={hobby.id}
+                href={`/hobbies/${hobby.id}`}
+                data-cursor="interactive"
+                className={className}
+              >
+                {cardContent}
+              </Link>
+            ) : (
+              <div key={hobby.id} className={className}>
+                {cardContent}
+              </div>
+            );
+          })}
         </div>
 
         <div ref={socialRef} className="mt-16 flex justify-center">
