@@ -147,7 +147,7 @@ export function HobbiesInterests() {
 
         <div ref={socialRef} className="mt-16 flex justify-center">
           <a
-            href="https://instagram.com/"
+            href="https://instagram.com/devlifeinmotion"
             target="_blank"
             rel="noopener noreferrer"
             data-cursor="interactive"
