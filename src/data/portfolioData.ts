@@ -11,8 +11,8 @@ export interface ProjectItem {
   id: string;
   title: string;
   image: string;
-  github: string | null;
-  live: string | null;
+  github?: string | null;
+  live?: string | null;
   info: string;
   category: string;
   tags: string[];
@@ -123,7 +123,7 @@ export const projects: ProjectItem[] = [
   {
     id: "atfm",
     title: "ATFM (Air Traffic Flow Management)",
-    image: "/Projects-img/ATFM-A-CDM-cover.png",
+    image: "/Projects-img/ATFM-A-CDM-cover.avif",
     github: "https://github.com/sauravsharma/infosnap",
     live: "https://infosnap.dev",
     category: "Web Application / Aviation",
@@ -143,12 +143,26 @@ export const projects: ProjectItem[] = [
       "An enterprise-grade real-time system designed to modernize airport operations and minimize airborne delays at TIA by addressing key stakeholder pain points. As a frontend developer on the team, my key responsibilities centered around full UI development and engineering complex data interfaces. I utilized Ant Design to build a clean, highly accessible user experience capable of handling large-scale data virtualization. To support real-time situational awareness, I integrated Server-Sent Events (SSE) for instant flight updates and notification streaming, alongside dynamic graphs and maps powered by Recharts and Leaflet.js. The platform ingests live flight messages from the Aeronautical Message Handling System (AMHS) to calculate exact flight timings, incorporate weather forecasts, and implement a Ground Delay Program (GDP) tailored for regional airports across Nepal.",
   },
   {
+    id: "saurav-furniture",
+    title: "Saurav Furniture",
+    image: "/Projects-img/saurav-furnitures.avif",
+    github: "https://github.com/sharma151/sauravfurnitures",
+    live: "https://sauravfurnitures.vercel.app/",
+    category: "Web Application / E-Commerce & Manufacturing",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui"],
+    info: "A premium digital showroom and manufacturing platform featuring a dynamic product catalog, custom quotation builder, and interactive consultation scheduling.",
+    year: "2026",
+    role: "Full Stack Developer",
+    description:
+      "An enterprise-grade web platform designed to digitize a custom furniture manufacturing business and streamline B2B/B2C client acquisitions. As the developer, I built a highly responsive, modern interface using Next.js and Tailwind CSS, leaning heavily on shadcn/ui to ensure accessible, clean design patterns. The application showcases the manufacturer's extensive portfolio and premium product catalog with smooth micro-interactions powered by Framer Motion. Key feature implementations include an automated multi-step quotation request engine—allowing users to submit custom dimensions and material preferences—as well as an integrated scheduling system for direct workshop consultations and site measurements.",
+  },
+  {
     id: "whatsapp-clone",
     title: "Real-Time Chat Application",
     image:
       "https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?w=1200&q=80", // Replace with your actual project screenshot
-    github: "https://github.com/sauravsharma/whatsapp-clone", // Update with your repository link
-    live: "https://chat-clone.dev", // Update with your live link if applicable
+    github: "https://github.com/sharma151/message_me_fe",
+    // live: "https://chat-clone.dev",
     category: "Full-Stack Web Application",
     tags: [
       "React.js",
@@ -170,8 +184,8 @@ export const projects: ProjectItem[] = [
     title: "Social Media Platform",
     image:
       "https://images.unsplash.com/photo-1665470909905-129dada26242?q=80&w=1112&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    github: "https://github.com/sauravsharma/facebook-clone",
-    live: "https://social-connect.dev",
+    github: "https://github.com/sharma151/Socialmedia_APP",
+    // live: "https://social-connect.dev",
     category: "Web Application",
     tags: ["React.js (JSX)", "TanStack Query", "Tailwind CSS", "Context API"],
     year: "2025",
@@ -185,8 +199,8 @@ export const projects: ProjectItem[] = [
     title: "InfoSnap Generator Hub",
     image:
       "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&q=80",
-    github: "https://github.com/sauravsharma/infosnap-hub",
-    live: "https://infosnap-generator.dev",
+    github: "https://github.com/sharma151/Businesscard-Generator",
+    live: "https://businesscard-generator.vercel.app/",
     category: "Web Application",
     tags: [
       "React.js",
@@ -205,9 +219,9 @@ export const projects: ProjectItem[] = [
     id: "task-scheduler",
     title: "Date-Driven Task Scheduler",
     image:
-      "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=1200&q=80", // Replace with your actual project screenshot
-    github: "https://github.com/sauravsharma/task-scheduler", // Update with your repository link
-    live: "https://scheduler.dev", // Update with your live link if applicable
+      "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=1200&q=80",
+    github: "https://github.com/sharma151/Task-schedular",
+    live: "https://tasksschedular.vercel.app/",
     category: "Web Application",
     tags: [
       "React.js",
@@ -226,11 +240,11 @@ export const projects: ProjectItem[] = [
     title: "Interactive Web Calculator",
     image:
       "https://images.unsplash.com/photo-1643894333833-d0be51338dd3?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Replace with your actual project screenshot
-    github: "https://github.com/sauravsharma/modern-calculator", // Update with your repository link
-    live: "https://calculator.dev", // Update with your live link if applicable
+    github: "https://github.com/sharma151/web-calc",
+    // live: "https://calculator.dev",
     category: "Web Application",
     tags: ["JavaScript (ES6+)", "HTML5", "CSS3 / Flexbox", "UI/UX Design"],
-    year: "2024",
+    year: "2022",
     role: "Frontend Developer",
     info: "A sleek, responsive mathematical utility featuring dynamic input handling and smooth mathematical evaluation.",
     description:
@@ -241,8 +255,8 @@ export const projects: ProjectItem[] = [
     title: "Real-Time Weather Tracker",
     image:
       "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=1200&q=80", // Replace with your actual project screenshot
-    github: "https://github.com/sauravsharma/weather-app", // Update with your repository link
-    live: "https://weather-vision.dev", // Update with your live link if applicable
+    // github: "https://github.com/sauravsharma/weather-app",
+    // live: "https://weather-vision.dev",
     category: "Web Application",
     tags: [
       "JavaScript (ES6+)",
@@ -250,30 +264,34 @@ export const projects: ProjectItem[] = [
       "JSON Data Parsing",
       "HTML5 / CSS3",
     ],
-    year: "2024",
+    year: "2021",
     role: "Frontend Developer",
     info: "A responsive weather application utilizing asynchronous API integration to deliver real-time atmospheric forecasts and current conditions.",
     description:
       "A clean, responsive weather forecast application designed to demonstrate seamless third-party data integration and asynchronous frontend architecture. Built using vanilla JavaScript (ES6+), semantic HTML5, and modern CSS layouts, the application connects to a public weather API using the Fetch API to retrieve live, location-based meteorological data. I engineered the asynchronous data flow to handle network states gracefully, parse JSON payloads efficiently, and instantly update the DOM with current temperatures, wind speeds, and regional forecast matrices. Special attention was paid to creating an intuitive user interface that shifts visually to present up-to-date atmospheric conditions across mobile and desktop displays.",
   },
-  {
-    id: "devflow",
-    title: "DevFlow",
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
-    github: "https://github.com/sauravsharma/devflow",
-    live: "https://devflow.io",
-    info: "Developer workflow automation platform with AI-assisted code review and deployment pipelines.",
-    category: "Developer Tools",
-    tags: ["React", "Node.js", "GraphQL", "Tailwind"],
-    year: "2024",
-    role: "Full-Stack Engineer",
-    description:
-      "DevFlow streamlines the entire development lifecycle from PR to production. Features include AI-powered code review suggestions, visual deployment pipelines, and a collaborative debugging workspace. The frontend leverages optimistic UI patterns and real-time collaboration via CRDTs.",
-  },
+  // {
+  //   id: "devflow",
+  //   title: "DevFlow",
+  //   image:
+  //     "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
+  //   github: "https://github.com/sauravsharma/devflow",
+  //   live: "https://devflow.io",
+  //   info: "Developer workflow automation platform with AI-assisted code review and deployment pipelines.",
+  //   category: "Developer Tools",
+  //   tags: ["React", "Node.js", "GraphQL", "Tailwind"],
+  //   year: "2024",
+  //   role: "Full-Stack Engineer",
+  //   description:
+  //     "DevFlow streamlines the entire development lifecycle from PR to production. Features include AI-powered code review suggestions, visual deployment pipelines, and a collaborative debugging workspace. The frontend leverages optimistic UI patterns and real-time collaboration via CRDTs.",
+  // },
 ];
 
-export const featuredProjectIds: string[] = ["atfm", "infosnap", "devflow"];
+export const featuredProjectIds: string[] = [
+  "atfm",
+  "infosnap",
+  "whatsapp-clone",
+];
 
 export const projectCategories: string[] = [
   "All",
@@ -380,36 +398,31 @@ export const hobbiesDetailData: HobbyDetail[] = [
         title: "Annapurna Base Camp",
         description:
           "Located in the Kaski district at 4,130m. You get to stand in a massive 360-degree mountain amphitheater surrounded entirely by towering vertical walls of snow, overlooking the massive Annapurna glacier, blooming red rhododendron forests, and cascading waterfalls.",
-        image:
-          "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
+        image: "/trek/annapurnabasecamp.avif",
       },
       {
         title: "Mardi Himal Base Camp",
         description:
           "Situated in the Annapurna region at 4,500m. Walking along a steep, narrow ridge trail, you get to see an incredibly up-close, dramatic view of the iconic Machapuchare (Fishtail) peak right in front of you, alongside low-lying clouds drifting through the valleys below.",
-        image:
-          "https://images.unsplash.com/photo-1627896157734-4d7d4388f24b?w=800&q=80",
+        image: "/trek/mardihimal.avif",
       },
       {
         title: "Gosaikunda Lake",
         description:
           "Located in the Rasuwa district at 4,380m. You get to look out over a cluster of frozen, turquoise alpine lakes nestled between jagged, rocky ridges, with sweeping views of the Langtang range stretching across the horizon.",
-        image:
-          "https://images.unsplash.com/photo-1582226871081-9b160cf2b740?w=800&q=80",
+        image: "/trek/gosaikunda.avif",
       },
       {
         title: "Poon Hill & Ghandruk Trek",
         description:
           "A classic loop in the Myagdi and Kaski districts reaching 3,210m. You get to witness a spectacular golden sunrise illuminating the entire Dhaulagiri and Annapurna ranges, followed by walks through traditional stone-paved Gurung villages and terraced farmland.",
-        image:
-          "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+        image: "/trek/poonhill.avif",
       },
       {
         title: "Ama Yangri Peak",
         description:
           "Located in the Helambu region of Sindhupalchok at 3,771m. At the summit, you get to see thousands of colorful prayer flags fluttering around a grand white chorten, offering a clear, unobstructed panorama of the Langtang and inner Himalayan peaks.",
-        image:
-          "https://images.unsplash.com/photo-1548574505-5e239809ee19?w=800&q=80",
+        image: "/trek/ama-yangri.avif",
       },
     ],
   },
@@ -489,7 +502,8 @@ export const hobbiesDetailData: HobbyDetail[] = [
     highlights: [
       {
         title: "Street Photography",
-        description: "Capturing the candid moments of everyday life in the city.",
+        description:
+          "Capturing the candid moments of everyday life in the city.",
         image: "/photos/placeholder.jpg",
         className: "md:col-span-1 md:row-span-2",
       },
