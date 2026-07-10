@@ -1,6 +1,6 @@
 export default {
   '*.{ts,tsx}': [
     'prettier --write',
-    'jest --bail --findRelatedTests'
+    'jest --bail --findRelatedTests --passWithNoTests'
   ],
 }
