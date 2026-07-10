@@ -6,6 +6,7 @@ import { Navbar } from "@/components/common/Navbar";
 import { SmoothScroll } from "@/components/common/SmoothScroll";
 import { ThemeProvider } from "@/components/common/ThemeProvider";
 import { siteConfig } from "@/data/portfolioData";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -70,6 +71,7 @@ export default function RootLayout({
             <Navbar />
             <main id="main-content" role="main">
               {children}
+              <Analytics />
             </main>
             <Footer />
           </SmoothScroll>
