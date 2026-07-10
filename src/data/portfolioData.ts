@@ -394,8 +394,8 @@ export function getFeaturedProjects(): ProjectItem[] {
 export interface HobbyHighlight {
   title?: string;
   description?: string;
-  image?: string; // Optional image for the highlight
-  className?: string; // For bento grid layouts
+  image?: string;
+  className?: string;
 }
 
 export interface HobbyDetail {
