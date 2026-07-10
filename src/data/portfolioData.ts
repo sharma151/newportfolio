@@ -143,6 +143,27 @@ export const projects: ProjectItem[] = [
       "An enterprise-grade real-time system designed to modernize airport operations and minimize airborne delays at TIA by addressing key stakeholder pain points. As a frontend developer on the team, my key responsibilities centered around full UI development and engineering complex data interfaces. I utilized Ant Design to build a clean, highly accessible user experience capable of handling large-scale data virtualization. To support real-time situational awareness, I integrated Server-Sent Events (SSE) for instant flight updates and notification streaming, alongside dynamic graphs and maps powered by Recharts and Leaflet.js. The platform ingests live flight messages from the Aeronautical Message Handling System (AMHS) to calculate exact flight timings, incorporate weather forecasts, and implement a Ground Delay Program (GDP) tailored for regional airports across Nepal.",
   },
   {
+    id: "secure-next-admission",
+    title: "Secure Next Admission",
+    image: "/Projects-img/securenextadmission.avif",
+    github: "https://github.com/sharma151/securenextadmission",
+    live: "https://securenextadmission.com",
+    category: "Web Application / Consultation & EdTech",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "Email.js",
+      "SEO Optimization",
+    ],
+    year: "2026",
+    role: "Frontend Developer",
+    info: "A scalable educational consultation platform empowering students to explore top medical, engineering, and management colleges and secure direct admission guidance.",
+    description:
+      "A production-ready consultation agency platform designed to streamline college discovery and admission workflows for students looking into medical, engineering, and management domains. As the frontend developer, I built the entire interface using Next.js, implementing standard modular code patterns engineered for future scalability and maintenance. The UI leverages Shadcn UI and Tailwind CSS to deliver a polished, high-performance, and fully responsive user experience. I integrated Email.js to handle complex contact and consultation forms seamlessly, alongside robust on-page SEO strategies to maximize the platform's visibility and organic reach.",
+  },
+  {
     id: "saurav-furniture",
     title: "Saurav Furniture",
     image: "/Projects-img/saurav-furnitures.avif",
