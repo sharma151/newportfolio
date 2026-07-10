@@ -14,6 +14,8 @@ A modern, responsive, and interactive personal portfolio built with Next.js, Rea
 - **GitHub Stats**: `react-github-calendar`
 - **Email Service**: [EmailJS](https://www.emailjs.com/)
 - **Theming**: `next-themes` (Dark & Light Mode)
+- **Testing**: [Jest](https://jestjs.io/) & [React Testing Library](https://testing-library.com/)
+- **Code Quality**: [Husky](https://typicode.github.io/husky/) & `lint-staged` for pre-commit hooks
 
 ## ✨ Features
 
@@ -25,6 +27,8 @@ A modern, responsive, and interactive personal portfolio built with Next.js, Rea
 - **Interactive Resume**: Integrated PDF viewer to read or download the resume.
 - **GitHub Integration**: Live GitHub contribution calendar rendered directly on the site.
 - **Contact Form**: Functional contact form powered by EmailJS.
+- **Unit Testing**: Pre-configured Jest setup with a sample UI component test.
+- **Pre-commit Hooks**: Enforces code formatting and passing tests before commits.
 
 ## 🏗️ Architecture
 
@@ -74,6 +78,17 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## 🧪 Testing & Code Quality
+
+This project is configured with **Husky** and **lint-staged** to automatically format code using Prettier and run relevant tests via **Jest** before every commit.
+
+To run all tests manually:
+```bash
+yarn test
+```
+
+A sample test is provided for the `Badge` component in `src/components/ui/Badge.test.tsx`.
 
 ---
 
