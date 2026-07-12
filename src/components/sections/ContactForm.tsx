@@ -9,7 +9,6 @@ import { Textarea } from "@/components/ui/Textarea";
 import { siteConfig, socialLinks } from "@/data/portfolioData";
 import { gsap, registerScrollTrigger } from "@/hooks/useScrollTrigger";
 import { cn } from "@/lib/utils";
-import emailjs from "emailjs-com";
 
 interface FormData {
   firstname: string;
@@ -64,6 +63,7 @@ export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submittedName, setSubmittedName] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   useGSAP(
     () => {
@@ -108,15 +108,29 @@ export function ContactForm() {
     }
 
     setIsSubmitting(true);
+    setSubmitError(null);
     try {
-      emailjs.init("yVDovN6BqCJqpJYj3");
-      await emailjs.send("service_t0s7m5f", "template_zrhrioo", formData);
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.error || "Failed to send message");
+      }
       setSubmittedName(formData.firstname);
       setFormData(initialFormData);
-    } catch (err) {
-      console.error("FAILED...", err);
-    } finally {
       setIsSubmitted(true);
+    } catch (err: any) {
+      console.error("FAILED...", err);
+      setSubmitError(
+        err.message || "Failed to send message. Please try again."
+      );
+    } finally {
       setIsSubmitting(false);
     }
   };
@@ -276,6 +290,11 @@ export function ContactForm() {
                 noValidate
                 aria-label="Contact form"
               >
+                {submitError && (
+                  <div className="mb-6 rounded-lg border border-red-500/20 bg-red-500/10 p-4 text-sm text-red-500">
+                    {submitError}
+                  </div>
+                )}
                 <div className="grid gap-6 sm:grid-cols-2">
                   <Input
                     label="First Name"
