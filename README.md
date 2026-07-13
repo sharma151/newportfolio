@@ -49,7 +49,10 @@ newportfolio/
 │   │   ├── hobbies/        # Hobbies page
 │   │   ├── projects/       # Projects page
 │   │   ├── resume/         # Resume page
+│   │   ├── favicon.ico     # Favicon
+│   │   ├── global.css      # Global Styles
 │   │   ├── layout.tsx      # Root layout
+│   │   ├── not-found.tsx   # 404 Not Found Page
 │   │   └── page.tsx        # Home page
 │   ├── components/         # React Components
 │   │   ├── common/         # Reusable common components (Header, Footer)
@@ -58,9 +61,16 @@ newportfolio/
 │   ├── data/               # Static data and mock content
 │   ├── hooks/              # Custom React hooks
 │   └── lib/                # Utility functions and configurations
+├── .husky/                 # Pre-commit git hooks
+├── .eslintrc.json          # ESLint configuration
+├── .prettierrc             # Prettier configuration
+├── example.env             # Environment variable template for local development
+├── jest.config.mjs         # Jest configuration
+├── jest.setup.ts           # Jest setup file
 ├── next.config.mjs         # Next.js configuration
-├── tailwind.config.ts      # Tailwind CSS configuration
 ├── package.json            # Project dependencies and scripts
+├── README.md               # Project README file
+├── tailwind.config.ts      # Tailwind CSS configuration
 └── tsconfig.json           # TypeScript configuration
 ```
 
