@@ -26,13 +26,13 @@ A modern, responsive, and interactive personal portfolio built with Next.js, Rea
 - **Projects Showcase**: Detailed project views with descriptions, tech stacks, and links.
 - **Interactive Resume**: Integrated PDF viewer to read or download the resume.
 - **GitHub Integration**: Live GitHub contribution calendar rendered directly on the site.
-- **Contact Form**: Functional contact form powered by EmailJS.
+- **Contact Form**: Functional contact form powered by Next.js API Routes and EmailJS for secure server-side delivery.
 - **Unit Testing**: Pre-configured Jest setup with a sample UI component test.
 - **Pre-commit Hooks**: Enforces code formatting and passing tests before commits.
 
 ## 🏗️ Architecture
 
-- **App Router**: Utilizes the modern Next.js App Router (`src/app`) for routing, layouts, and server/client components.
+- **App Router**: Utilizes the modern Next.js App Router (`src/app`) for routing, layouts, server/client components, and API routes.
 - **Component-Driven Design**: The UI is modularized into `common` (layout elements like headers/footers), `sections` (complex page blocks), and `ui` (atomic elements like buttons and inputs).
 - **Separation of Concerns**: Custom hooks (`src/hooks`) and utility functions (`src/lib`) extract logic from components.
 - **Centralized Data**: Static data (e.g., project lists, experiences) is decoupled from components and stored in `src/data` for easy updates.
@@ -45,6 +45,7 @@ newportfolio/
 ├── src/                    # Source code
 │   ├── app/                # Next.js App Router (Pages & Layouts)
 │   │   ├── about/          # About page
+│   │   ├── api/            # API Routes (e.g., Contact Form EmailJS handler)
 │   │   ├── hobbies/        # Hobbies page
 │   │   ├── projects/       # Projects page
 │   │   ├── resume/         # Resume page
