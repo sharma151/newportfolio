@@ -98,17 +98,19 @@ export function FeaturedProjects() {
                   priority
                   unoptimized
                   className="object-cover transition-transform duration-700 ease-premium group-hover:scale-105"
-                  sizes={index === 0 ? "(max-width: 768px) 100vw, 66vw" : "(max-width: 768px) 100vw, 33vw"}
+                  sizes={
+                    index === 0
+                      ? "(max-width: 768px) 100vw, 66vw"
+                      : "(max-width: 768px) 100vw, 33vw"
+                  }
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
               </div>
 
               <div className="absolute inset-x-0 bottom-0 p-6">
                 <div className="flex items-center gap-2">
-                  <Badge variant="accent">{project.category}</Badge>
-                  <span className="text-xs text-muted-foreground">
-                    {project.year}
-                  </span>
+                  <Badge variant="default">{project.category}</Badge>
+                  <span className="text-xs">{project.year}</span>
                 </div>
                 <h3 className="mt-3 text-xl font-semibold text-foreground transition-colors group-hover:text-accent">
                   {project.title}

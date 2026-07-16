@@ -1,25 +1,44 @@
 "use client";
 
 import { useGSAP } from "@gsap/react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ChevronDown, Check } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Badge } from "@/components/ui/Badge";
 import {
   type ProjectItem,
   projectCategories,
   projects,
 } from "@/data/portfolioData";
-import { gsap, registerScrollTrigger } from "@/hooks/useScrollTrigger";
+import {
+  gsap,
+  registerScrollTrigger,
+  ScrollTrigger,
+} from "@/hooks/useScrollTrigger";
 import { cn } from "@/lib/utils";
 
 export function ProjectsGrid() {
   const sectionRef = useRef<HTMLElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const [activeCategory, setActiveCategory] = useState("All");
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const filteredProjects =
     activeCategory === "All"
@@ -30,6 +49,14 @@ export function ProjectsGrid() {
     () => {
       registerScrollTrigger();
       animateCards();
+
+      // Refresh ScrollTrigger to recalculate layout height after filtering,
+      // avoiding a large blank space at the bottom on mobile screens.
+      const timeout = setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 50);
+
+      return () => clearTimeout(timeout);
     },
     { scope: sectionRef, dependencies: [activeCategory] }
   );
@@ -93,7 +120,7 @@ export function ProjectsGrid() {
   return (
     <section
       ref={sectionRef}
-      className="px-6 pt-32 pb-24 lg:pt-36 lg:pb-32 lg:px-8"
+      className="px-6 pb-24 pt-32 lg:px-8 lg:pb-32 lg:pt-36"
       aria-labelledby="projects-heading"
     >
       <div className="mx-auto max-w-7xl">
@@ -109,29 +136,59 @@ export function ProjectsGrid() {
           </h1>
         </div>
 
-        <div
-          className="mb-12 flex flex-wrap gap-2"
-          role="tablist"
-          aria-label="Filter projects by category"
-        >
-          {projectCategories.map((category) => (
-            <button
-              key={category}
-              type="button"
-              role="tab"
-              data-cursor="interactive"
-              aria-selected={activeCategory === category}
-              onClick={() => setActiveCategory(category)}
+        <div className="relative mb-12 w-full max-w-[280px]" ref={dropdownRef}>
+          <button
+            type="button"
+            className="flex w-full items-center justify-between rounded-xl border border-border/40 bg-card/40 px-5 py-3 text-sm font-medium shadow-sm transition-all hover:border-border/80 hover:bg-card focus:outline-none"
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            aria-haspopup="listbox"
+            aria-expanded={isDropdownOpen}
+          >
+            <span>
+              {activeCategory === "All" ? "All Projects" : activeCategory}
+            </span>
+            <ChevronDown
               className={cn(
-                "rounded-full px-5 py-2 text-sm font-medium transition-all duration-300",
-                activeCategory === category
-                  ? "bg-foreground text-background"
-                  : "bg-muted text-muted-foreground hover:text-foreground"
+                "h-4 w-4 text-muted-foreground transition-transform duration-300",
+                isDropdownOpen && "rotate-180"
               )}
+            />
+          </button>
+
+          {isDropdownOpen && (
+            <div
+              className="absolute left-0 top-full z-20 mt-2 w-full origin-top-left rounded-xl border border-border/50 bg-background/95 p-2 shadow-xl backdrop-blur-md transition-all"
+              role="listbox"
             >
-              {category}
-            </button>
-          ))}
+              <div className="flex max-h-[300px] flex-col gap-1 overflow-y-auto pr-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                {projectCategories.map((category) => (
+                  <button
+                    key={category}
+                    type="button"
+                    role="option"
+                    aria-selected={activeCategory === category}
+                    className={cn(
+                      "flex w-full items-center justify-between rounded-lg px-4 py-2.5 text-left text-sm transition-colors",
+                      activeCategory === category
+                        ? "bg-foreground font-medium text-background"
+                        : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                    )}
+                    onClick={() => {
+                      setActiveCategory(category);
+                      setIsDropdownOpen(false);
+                    }}
+                  >
+                    <span>
+                      {category === "All" ? "All Projects" : category}
+                    </span>
+                    {activeCategory === category && (
+                      <Check className="h-4 w-4" />
+                    )}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
 
         <div
