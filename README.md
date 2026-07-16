@@ -46,7 +46,6 @@ newportfolio/
 │   ├── app/                # Next.js App Router (Pages & Layouts)
 │   │   ├── about/          # About page
 │   │   ├── api/            # API Routes (e.g., Contact Form EmailJS handler)
-│   │   ├── fonts/          # Custom Fonts
 │   │   ├── hobbies/        # Hobbies page
 │   │   ├── projects/       # Projects page
 │   │   ├── resume/         # Resume page
