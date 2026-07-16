@@ -224,7 +224,7 @@ export function ContactForm() {
                         Response time
                       </p>
                       <p className="text-sm font-medium text-foreground">
-                        Within 48 hours
+                        Within 24 hours
                       </p>
                     </div>
                   </li>
@@ -302,7 +302,7 @@ export function ContactForm() {
                     value={formData.firstname}
                     onChange={handleChange}
                     error={errors.firstname}
-                    placeholder="John Doe"
+                    placeholder="Enter first name"
                     required
                     autoComplete="name"
                   />
@@ -312,7 +312,7 @@ export function ContactForm() {
                     value={formData.lastname}
                     onChange={handleChange}
                     error={errors.lastname}
-                    placeholder="Doe"
+                    placeholder="Enter last name"
                     required
                     autoComplete="family-name"
                   />
