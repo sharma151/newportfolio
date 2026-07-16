@@ -12,7 +12,11 @@ import {
   projectCategories,
   projects,
 } from "@/data/portfolioData";
-import { gsap, registerScrollTrigger } from "@/hooks/useScrollTrigger";
+import {
+  gsap,
+  registerScrollTrigger,
+  ScrollTrigger,
+} from "@/hooks/useScrollTrigger";
 import { cn } from "@/lib/utils";
 
 export function ProjectsGrid() {
@@ -45,6 +49,14 @@ export function ProjectsGrid() {
     () => {
       registerScrollTrigger();
       animateCards();
+
+      // Refresh ScrollTrigger to recalculate layout height after filtering,
+      // avoiding a large blank space at the bottom on mobile screens.
+      const timeout = setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 50);
+
+      return () => clearTimeout(timeout);
     },
     { scope: sectionRef, dependencies: [activeCategory] }
   );
