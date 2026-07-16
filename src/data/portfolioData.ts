@@ -126,7 +126,7 @@ export const projects: ProjectItem[] = [
     image: "/Projects-img/ATFM-A-CDM-cover.avif",
     github: "https://github.com/sauravsharma/infosnap",
     live: "https://infosnap.dev",
-    category: "Web Application / Aviation",
+    category: "Aviation",
     tags: [
       "React.js",
       "TypeScript",
@@ -148,7 +148,7 @@ export const projects: ProjectItem[] = [
     image: "/Projects-img/securenextadmission.avif",
     github: "https://github.com/sharma151/securenextadmission",
     live: "https://securenextadmission.com",
-    category: "Web Application / Consultation & EdTech",
+    category: " Consultation & EdTech",
     tags: [
       "Next.js",
       "TypeScript",
@@ -166,10 +166,10 @@ export const projects: ProjectItem[] = [
   {
     id: "saurav-furniture",
     title: "Saurav Furniture",
-    image: "/Projects-img/saurav-furnitures.avif",
+    image: "/Projects-img/saurav-funiture-cover.avif",
     github: "https://github.com/sharma151/sauravfurnitures",
     live: "https://sauravfurnitures.vercel.app/",
-    category: "Web Application / E-Commerce & Manufacturing",
+    category: "E-Commerce & Manufacturing",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui"],
     info: "A premium digital showroom and manufacturing platform featuring a dynamic product catalog, custom quotation builder, and interactive consultation scheduling.",
     year: "2026",
@@ -218,8 +218,7 @@ export const projects: ProjectItem[] = [
   {
     id: "infosnap",
     title: "InfoSnap Generator Hub",
-    image:
-      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&q=80",
+    image: "/Projects-img/infosnap-cover.avif", // Replace with your actual project screenshot
     github: "https://github.com/sharma151/Businesscard-Generator",
     live: "https://businesscard-generator.vercel.app/",
     category: "Web Application",
@@ -310,8 +309,8 @@ export const projects: ProjectItem[] = [
 
 export const featuredProjectIds: string[] = [
   "atfm",
-  "infosnap",
-  "whatsapp-clone",
+  "secure-next-admission",
+  "saurav-furniture",
 ];
 
 export const projectCategories: string[] = [
