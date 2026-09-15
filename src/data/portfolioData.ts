@@ -85,12 +85,12 @@ export const socialLinks: SocialLink[] = [
 
 export const educationExperience: EducationExperienceItem[] = [
   {
-    year: "2024 - Present",
+    year: "Aug, 2024 - Present",
     title: "Young Innovation Pvt Ltd (NP)",
     degree: "Frontend Developer",
     link: "https://younginnovations.com.np/",
     description:
-      " React Frontend Developer | Building clean, responsive UIs using modern technologies like TypeScript, TanStack Query, and Tailwind CSS. Focused on scalable components, intuitive user experiences, and continuous improvement. Open to new challenges and growth opportunities.",
+      " Frontend Developer | Architecting performant, maintainable web applications using React, Next.js, and TypeScript. Experienced in designing modular component systems, optimizing complex data flows, and leveraging AI tools and integrations to build smarter, future-ready interfaces.Passionate about solving problems and continuous innovation.",
   },
   {
     year: "2020 - 2024",
@@ -136,11 +136,38 @@ export const projects: ProjectItem[] = [
       "Recharts",
       "TanStack Query",
     ],
-    year: "2025",
+    year: "2025-26",
     role: "Frontend Developer",
     info: "Real-time air traffic flow and flight scheduling platform featuring live AMHS data streams, weather forecasts, and regional Ground Delay Programs (GDP).",
     description:
       "An enterprise-grade real-time system designed to modernize airport operations and minimize airborne delays at TIA by addressing key stakeholder pain points. As a frontend developer on the team, my key responsibilities centered around full UI development and engineering complex data interfaces. I utilized Ant Design to build a clean, highly accessible user experience capable of handling large-scale data virtualization. To support real-time situational awareness, I integrated Server-Sent Events (SSE) for instant flight updates and notification streaming, alongside dynamic graphs and maps powered by Recharts and Leaflet.js. The platform ingests live flight messages from the Aeronautical Message Handling System (AMHS) to calculate exact flight timings, incorporate weather forecasts, and implement a Ground Delay Program (GDP) tailored for regional airports across Nepal.",
+  },
+  {
+    id: "plgsp-mis",
+    title: "PLGSP MIS (Management Information System)",
+    image: "/Projects-img/plgsp-mis-cover.avif",
+    // github: "https://github.com/sauravsharma/plgsp-mis",
+    live: "https://plgsp-mis.yipl.com.np/",
+    category: "Governance & Enterprise",
+    tags: [
+      "React 18",
+      "TypeScript",
+      "Vite",
+      "React Router v7",
+      "TanStack Query",
+      "Zustand",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "React Hook Form",
+      "Zod",
+      "Vitest",
+      "Playwright",
+    ],
+    year: "2026",
+    role: "Frontend Developer",
+    info: "Decentralized governance operations and reporting dashboard featuring dynamic form engines, granular RBAC, and real-time results frameworks.",
+    description:
+      "A scalable enterprise Single Page Application built for the Provincial and Local Governance Support Programme (PLGSP) to eliminate data fragmentation across regional governance tiers. Engineered following a feature-sliced design pattern with React 18, TypeScript, and Vite, the platform centralizes activities, results tracking, capital budget monitoring, and beneficiary registries into a unified portal. Key frontend contributions include architecting a granular Role-Based Access Control (RBAC) system integrated with React Router v7 loaders to restrict route access and component-level permissions, implementing dynamic form-builder workflows using React Hook Form and Zod, and synchronizing complex server state via TanStack Query and Zustand. The platform enforces standardized data collection from local administrative levels while providing audit trails, AI token monitoring, and export-ready reporting engines.",
   },
   {
     id: "secure-next-admission",
@@ -309,7 +336,7 @@ export const projects: ProjectItem[] = [
 
 export const featuredProjectIds: string[] = [
   "atfm",
-  "secure-next-admission",
+  "plgsp-mis",
   "saurav-furniture",
 ];
 

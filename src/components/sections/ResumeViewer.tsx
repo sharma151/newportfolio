@@ -117,34 +117,40 @@ export function ResumeViewer() {
           aria-label="Resume controls"
         >
           {/* Page Navigation */}
-          <div className="flex items-center gap-0.5 sm:gap-2">
-            <Button
-              variant="ghost"
-              size="sm"
-              className="h-8 w-8 p-0"
-              onClick={() => setPageNumber((p) => Math.max(p - 1, 1))}
-              disabled={pageNumber <= 1 || hasError}
-              aria-label="Previous page"
-            >
-              <ChevronLeft className="h-4 w-4" />
-            </Button>
-            <span className="min-w-[45px] text-center text-xs text-muted-foreground sm:min-w-[80px] sm:text-sm">
-              {isLoading || hasError ? "—" : `${pageNumber} / ${numPages}`}
-            </span>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="h-8 w-8 p-0"
-              onClick={() => setPageNumber((p) => Math.min(p + 1, numPages))}
-              disabled={pageNumber >= numPages || hasError}
-              aria-label="Next page"
-            >
-              <ChevronRight className="h-4 w-4" />
-            </Button>
+          <div className="flex flex-1 items-center justify-start">
+            {numPages > 1 && (
+              <div className="flex items-center gap-0.5 sm:gap-2">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="h-8 w-8 p-0"
+                  onClick={() => setPageNumber((p) => Math.max(p - 1, 1))}
+                  disabled={pageNumber <= 1 || hasError}
+                  aria-label="Previous page"
+                >
+                  <ChevronLeft className="h-4 w-4" />
+                </Button>
+                <span className="min-w-[45px] text-center text-xs text-muted-foreground sm:min-w-[80px] sm:text-sm">
+                  {isLoading || hasError ? "—" : `${pageNumber} / ${numPages}`}
+                </span>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="h-8 w-8 p-0"
+                  onClick={() =>
+                    setPageNumber((p) => Math.min(p + 1, numPages))
+                  }
+                  disabled={pageNumber >= numPages || hasError}
+                  aria-label="Next page"
+                >
+                  <ChevronRight className="h-4 w-4" />
+                </Button>
+              </div>
+            )}
           </div>
 
           {/* Zoom Controls */}
-          <div className="flex items-center gap-0.5 sm:gap-2">
+          <div className="flex items-center justify-center gap-0.5 sm:gap-2">
             <Button
               variant="ghost"
               size="sm"
@@ -181,15 +187,17 @@ export function ResumeViewer() {
           </div>
 
           {/* Download Button */}
-          <Button
-            size="sm"
-            className="h-8 px-2 sm:px-3"
-            onClick={handleDownload}
-            data-cursor="interactive"
-          >
-            <Download className="h-4 w-4 sm:mr-2" aria-hidden="true" />
-            <span className="hidden sm:inline">Download PDF</span>
-          </Button>
+          <div className="flex flex-1 items-center justify-end">
+            <Button
+              size="sm"
+              className="h-8 px-2 sm:px-3"
+              onClick={handleDownload}
+              data-cursor="interactive"
+            >
+              <Download className="h-4 w-4 sm:mr-2" aria-hidden="true" />
+              <span className="hidden sm:inline">Download PDF</span>
+            </Button>
+          </div>
         </div>
 
         <div className="overflow-hidden rounded-2xl border border-border bg-card">
